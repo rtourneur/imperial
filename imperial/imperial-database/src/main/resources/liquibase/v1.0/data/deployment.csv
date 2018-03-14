@@ -1,0 +1,67 @@
+ID|NAME|NAME_CODE|TITLE_CODE|ELITE|UNIQUENESS|MODE|FACTION|COUNT|COST|REINFORCE|SIZE|HEALTH|SPEED|ATTACK_TYPE
+1|Stormtrooper|deployment.stomtrooper|null|false|false|all|Imperial|3|6|2|Small|3|4|Ranged
+2|Stormtrooper|deployment.stomtrooper|null|true|false|all|Imperial|5|9|3|Small|5|4|Ranged
+3|Imperial Officer|deployment.imperial-officer|null|false|false|all|Imperial|1|2|null|Small|3|4|Ranged
+4|Imperial Officer|deployment.imperial-officer|null|true|false|all|Imperial|1|5|null|Small|5|4|Ranged
+5|E-Web Engineer|deployment.e-web-engineer|null|false|false|all|Imperial|1|6|null|Medium|5|2|Ranged
+6|E-Web Engineer|deployment.e-web-engineer|null|true|false|all|Imperial|1|8|null|Medium|7|3|Ranged
+7|Royal Guard|deployment.royal-guard|null|false|false|all|Imperial|2|8|4|Small|8|5|Melee
+8|Royal Guard|deployment.royal-guard|null|true|false|all|Imperial|2|12|6|Small|10|5|Melee
+9|Probre Droid|deployment.probre-droid|null|false|false|all|Imperial|1|3|null|Small|5|3|Ranged
+10|Probre Droid|deployment.probre-droid|null|true|false|all|Imperial|1|5|null|Small|7|3|Ranged
+11|AT-ST|deployment.at-st|null|true|false|all|Imperial|1|14|null|Massive|15|4|Ranged
+12|Darth Vader|deployment.darth-vader|deployment.darth-vader.title|true|true|all|Imperial|1|18|null|Small|16|4|Melee
+13|General Weiss|deployment.general-weiss|deployment.general-weiss.title|true|true|all|Imperial|1|16|null|Massive|15|4|Ranged
+14|Royal Guard Champion|deployment.royal-guard-champion|null|true|true|all|Imperial|1|15|null|Small|13|6|Melee
+15|Trandoshan Hunter|deployment.trandoshan-hunter|null|false|false|all|Mercenary|2|7|3|Small|6|4|Ranged
+16|Trandoshan Hunter|deployment.trandoshan-hunter|null|true|false|all|Mercenary|2|10|5|Small|8|4|Ranged
+17|Nexu|deployment.nexu|null|false|false|all|Mercenary|1|4|null|Large|6|6|Melee
+18|Nexu|deployment.nexu|null|true|false|all|Mercenary|1|6|null|Large|8|6|Melee
+19|IG-88|deployment.ig-88|deployment.ig-88.title|true|true|all|Mercenary|1|12|null|Small|10|5|Ranged
+20|Rebel Trooper|deployment.rebel-trooper|null|false|false|all|Rebel|3|6|2|Small|3|4|Ranged
+21|Rebel Trooper|deployment.rebel-trooper|null|true|false|all|Rebel|3|9|3|Small|5|4|Ranged
+22|Rebel Saboteur|deployment.rebel-saboteur|null|false|false|all|Rebel|2|5|3|Small|4|4|Ranged
+23|Rebel Saboteur|deployment.rebel-saboteur|null|true|false|all|Rebel|2|7|4|Small|6|5|Ranged
+24|Diala Passil|deployment.diala-passil|null|false|true|skirmish|Rebel|1|7|null|Small|8|5|Melee
+25|Fenn Signis|deployment.fenn-signis|null|false|true|skirmish|Rebel|1|9|null|Small|10|4|Ranged
+26|Gaarkhan|deployment.gaarkhan|null|false|true|skirmish|Rebel|1|8|null|Small|10|4|Melee
+27|Gideon Argus|deployment.gideon-argus|null|false|true|skirmish|Rebel|1|3|null|Small|5|4|Ranged
+28|Jyn Odan|deployment.jyn-odan|null|false|true|skirmish|Rebel|1|5|null|Small|6|5|Ranged
+29|Mak Eshka'rey|deployment.mak-eshkarey|null|false|true|skirmish|Rebel|1|3|null|Small|4|4|Ranged
+30|Luke Skywalker|deployment.luke-skywalker|deployment.luke-skywalker.title|true|true|all|Rebel|1|10|null|Small|10|5|Ranged
+31|Chewbacca|deployment.chewbacca|deployment.chewbacca.title|true|true|all|Rebel|1|15|null|Small|14|4|Ranged
+32|Han Solo|deployment.han-solo|deployment.han-solo.title|true|true|all|Rebel|1|12|null|Small|12|4|Ranged
+33|Snowtrooper|deployment.snowtrooper|null|false|false|all|Imperial|3|7|2|Small|4|4|Ranged
+34|Snowtrooper|deployment.snowtrooper|null|true|false|all|Imperial|3|10|3|Small|6|4|Ranged
+35|SC2-M Repulsor Tank|deployment.sc2-m-repulsor-tank|null|true|false|all|Imperial|1|10|null|Massive|10|4|Ranged
+36|General Sorin|deployment.general-sorin|deployment.general-sorin.title|true|true|all|Imperial|1|8|null|Small|7|4|Ranged
+37|HK Assassin Droid|deployment.hk-assassin-droid|null|false|false|all|Mercenary|2|8|4|Small|5|4|Ranged
+38|HK Assassin Droid|deployment.hk-assassin-droid|null|true|false|all|Mercenary|2|11|6|Small|6|4|Ranged
+39|Wampa|deployment.wampa|null|false|false|all|Mercenary|1|5|null|Small|9|3|Melee
+40|Wampa|deployment.wampa|null|true|false|all|Mercenary|1|8|null|Small|12|3|Melee
+41|Dengar|deployment.dengar|deployment.dengar.title|true|true|all|Mercenary|1|7|null|Small|8|4|Ranged
+42|Loku Kanoloa|deployment.loku-kanoloa|null|false|true|skirmish|Rebel|1|4|null|Small|4|5|Ranged
+43|MHD-19|deployment.mhd-19|null|false|true|skirmish|Rebel|1|5|null|Small|7|4|Ranged
+44|Verena Talos|deployment.verena-talos|null|false|true|skirmish|Rebel|1|8|null|Small|11|4|Ranged
+45|Leia Organa|deployment.leia-organa|deployment.leia-organa.title|true|true|campagn|Rebel|1|8|null|Small|8|5|Ranged
+46|Leia Organa|deployment.leia-organa|deployment.leia-organa.title|true|true|skirmish|Rebel|1|8|null|Small|8|5|Ranged
+47|Echo Base Trooper|deployment.echo-base-trooper|null|false|false|all|Rebel|2|6|3|Small|5|4|Ranged
+48|Echo Base Trooper|deployment.echo-base-trooper|null|true|false|all|Rebel|2|8|4|Small|8|4|Ranged
+49|Heavy Stormtrooper|deployment.heavy-stormtrooper|null|false|false|all|Imperial|2|6|3|Small|6|3|Ranged
+50|Heavy Stormtrooper|deployment.heavy-stormtrooper|null|true|false|all|Imperial|2|8|4|Small|6|3|Ranged
+51|Kayn Somos|deployment.kayn-somos|deployment.kayn-somos.title|true|true|all|Imperial|1|10|null|Small|12|4|Ranged
+52|Tusken Raider|deployment.tusken-raider|null|false|false|all|Mercenary|2|5|2|Small|4|4|Melee
+53|Tusken Raider|deployment.tusken-raider|null|true|false|all|Mercenary|2|7|3|Small|7|4|Melee
+54|Boba Fett|deployment.boba-fett|deployment.boba-fett.title|true|true|all|Mercenary|1|13|null|Small|12|6|Ranged
+55|Biv Bodrhik|deployment.biv-bodrhik|null|false|true|skirmish|Rebel|1|9|null|Small|8|4|Ranged
+56|Saska Teft|deployment.saska-teft|null|false|true|skirmish|Rebel|1|6|null|Small|7|4|Ranged
+57|C-3PO|deployment.c-3po|deployment.c-3po.title|true|true|all|Rebel|1|2|null|Small|4|3|None
+58|R2-D2|deployment.r2-d2|deployment.r2-d2.title|true|true|campagn|Rebel|1|3|null|Small|6|3|Ranged
+59|R2-D2|deployment.r2-d2|deployment.r2-d2.title|true|true|skirmish|Rebel|1|3|null|Small|6|3|Ranged
+60|Wookiee Warrior|deployment.wookiee-warrior|null|false|false|all|Rebel|2|8|4|Small|11|4|Melee
+61|Wookiee Warrior|deployment.wookiee-warrior|null|true|false|all|Rebel|2|11|6|Small|13|4|Melee
+62|Hired Gun|deployment.hired-gun|null|false|false|all|Mercenary|2|4|2|Small|3|5|Ranged
+63|Hired Gun|deployment.hired-gun|null|true|false|all|Mercenary|2|6|3|Small|4|5|Ranged
+64|Alliance Smuggler|deployment.alliance-smuggler|null|false|false|all|Rebel|1|2|null|Small|3|4|Ranged
+65|Alliance Smuggler|deployment.alliance-smuggler|null|true|false|all|Rebel|1|4|null|Small|5|5|Ranged
+66|Bantha Rider|deployment.bantha-rider|null|true|false|all|Mercenary|1|9|null|Massive|21|5|Ranged

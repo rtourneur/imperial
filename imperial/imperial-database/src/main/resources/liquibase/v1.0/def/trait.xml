@@ -1,0 +1,22 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-imperial-trait-1">
+    <createTable tableName="TRAIT" schemaName="IMPERIAL" remarks="Table for traits">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the trait">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="TRAIT_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the trait">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0" >
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-trait-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/trait.csv" separator="|" tableName="TRAIT" />
+  </changeSet>
+
+</databaseChangeLog>

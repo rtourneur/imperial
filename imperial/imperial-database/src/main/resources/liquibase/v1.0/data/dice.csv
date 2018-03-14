@@ -1,0 +1,8 @@
+NAME|MESSAGE_CODE|DICE_TYPE
+Red|dice.red|Attack
+Blue|dice.blue|Attack
+Green|dice.green|Attack
+Yellow|dice.yellow|Attack
+Undefine|dice.undefine|Attack
+Black|dice.black|Defense
+White|dice.white|Defense

@@ -1,0 +1,30 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-imperial-ability-1">
+    <createTable tableName="ABILITY" schemaName="IMPERIAL" remarks="Table for abilities">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the ability">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="ABILITY_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the ability">
+        <constraints nullable="false" />
+      </column>
+      <column name="ABILITY_CODE" type="VARCHAR(45)" remarks="Description code of the ability">
+        <constraints nullable="false" />
+      </column>
+      <column name="ACTION" type="INT" remarks="Action count of the ability" />
+      <column name="SURGE" type="INT" remarks="Surge count of the ability" />
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0" >
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-ability-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/ability.csv" separator="|" tableName="ABILITY" >
+      <column name="ACTION" type="NUMERIC" />
+      <column name="SURGE" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

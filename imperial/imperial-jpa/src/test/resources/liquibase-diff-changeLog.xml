@@ -1,0 +1,221 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="tourneur (generated)" id="1521032651353-1">
+        <createTable tableName="ITEM">
+            <column autoIncrement="true" name="ID" type="INTEGER">
+                <constraints primaryKey="true" primaryKeyName="ITEMPK"/>
+            </column>
+            <column defaultValueNumeric="0" name="VERSION" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ATTACK_TYPE" type="VARCHAR(6)"/>
+            <column name="DESCRIPTION_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ITEM_CATEGORY" type="VARCHAR(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ITEM_TYPE" type="VARCHAR(12)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MODIFICATIONS" type="INTEGER"/>
+            <column name="NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME_CODE" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RULE_CODE" type="VARCHAR(40)"/>
+            <column name="COST" type="INTEGER"/>
+            <column name="EXPANSION" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-2">
+        <createTable tableName="ITEM_ATTACK">
+            <column name="ITEM_ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DICE_NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RANK" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-3">
+        <createTable tableName="ITEM_CAPACITY">
+            <column name="ITEM_ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CAPACITY_ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RANK" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-4">
+        <createTable tableName="ITEM_TRAIT">
+            <column name="ITEM_ID" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRAIT_NAME" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-5">
+        <addUniqueConstraint columnNames="DICE, SIDE" constraintName="IDX_DICE_SIDE" tableName="DICE_SIDE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-6">
+        <addUniqueConstraint columnNames="ITEM_ID, RANK" constraintName="IDX_ITEM_ATTACK" tableName="ITEM_ATTACK"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-7">
+        <addUniqueConstraint columnNames="ITEM_ID, RANK" constraintName="IDX_ITEM_CAPACITY" tableName="ITEM_CAPACITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-8">
+        <addForeignKeyConstraint baseColumnNames="TRAIT_NAME" baseTableName="ITEM_TRAIT" constraintName="FK_1tkoxcolmnm7xjobmt3f0i5vu" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-9">
+        <addForeignKeyConstraint baseColumnNames="DICE_NAME" baseTableName="ITEM_ATTACK" constraintName="FK_44xj5vmpui15knywnngjke9p0" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-10">
+        <addForeignKeyConstraint baseColumnNames="ITEM_ID" baseTableName="ITEM_TRAIT" constraintName="FK_4nijii17bfbwrxqaxecjo7sfs" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-11">
+        <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="ITEM" constraintName="FK_ITEM_EXPANSION" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-12">
+        <addForeignKeyConstraint baseColumnNames="ITEM_ID" baseTableName="ITEM_CAPACITY" constraintName="FK_ju28gim5keaesqqie5hw8h1gb" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-13">
+        <addForeignKeyConstraint baseColumnNames="ITEM_ID" baseTableName="ITEM_ATTACK" constraintName="FK_t6r30a6cnwy6hfnagn46mmrk7" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID" referencedTableName="ITEM"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-14">
+        <dropIndex indexName="SQL180312135545890" tableName="CAPACITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-15">
+        <dropIndex indexName="SQL180312135545910" tableName="CAPACITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-16">
+        <dropIndex indexName="SQL180312135546330" tableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-17">
+        <dropIndex indexName="SQL180312135546370" tableName="DICE_SIDE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-18">
+        <dropIndex indexName="SQL180312135546520" tableName="DEPLOYMENT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-19">
+        <dropIndex indexName="SQL180312135546550" tableName="DEPLOYMENT_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-20">
+        <dropIndex indexName="SQL180312135546570" tableName="DEPLOYMENT_TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-21">
+        <dropIndex indexName="SQL180312135546600" tableName="DEPLOYMENT_CAPACITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-22">
+        <dropIndex indexName="SQL180312135546620" tableName="DEPLOYMENT_CAPACITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-23">
+        <dropIndex indexName="SQL180312135546680" tableName="DEPLOYMENT_ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-24">
+        <dropIndex indexName="SQL180312135546700" tableName="DEPLOYMENT_ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-25">
+        <dropIndex indexName="SQL180312135546740" tableName="DEPLOYMENT_DEFENSE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-26">
+        <dropIndex indexName="SQL180312135546760" tableName="DEPLOYMENT_DEFENSE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-27">
+        <dropIndex indexName="SQL180312135546820" tableName="DEPLOYMENT_ATTACK"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-28">
+        <dropIndex indexName="SQL180312135546830" tableName="DEPLOYMENT_ATTACK"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-29">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT_DEFENSE" constraintName="FK_17dj2vt8l9v1audnvdclluyqm"/>
+        <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_DEFENSE" constraintName="FK_17dj2vt8l9v1audnvdclluyqm" referencedColumnNames="ID" referencedTableName="DEPLOYMENT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-30">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT_ABILITY" constraintName="FK_4uvp2p5ikyyo2hce6gpd9oq3"/>
+        <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_ABILITY" constraintName="FK_4uvp2p5ikyyo2hce6gpd9oq3" referencedColumnNames="ID" referencedTableName="DEPLOYMENT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-31">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT_ATTACK" constraintName="FK_4vseg8arr4akhwb6qcfu38ogr"/>
+        <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_ATTACK" constraintName="FK_4vseg8arr4akhwb6qcfu38ogr" referencedColumnNames="ID" referencedTableName="DEPLOYMENT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-32">
+        <dropForeignKeyConstraint baseTableName="DICE_SIDE" constraintName="FK_6xojadswxgm7w9gyco0m6tnsb"/>
+        <addForeignKeyConstraint baseColumnNames="DICE" baseTableName="DICE_SIDE" constraintName="FK_6xojadswxgm7w9gyco0m6tnsb" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-33">
+        <dropForeignKeyConstraint baseTableName="CAPACITY" constraintName="FK_CAPACITY_KEY_1"/>
+        <addForeignKeyConstraint baseColumnNames="KEY_1" baseTableName="CAPACITY" constraintName="FK_CAPACITY_KEY_1" referencedColumnNames="NAME" referencedTableName="KEYWORD"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-34">
+        <dropForeignKeyConstraint baseTableName="CAPACITY" constraintName="FK_CAPACITY_KEY_2"/>
+        <addForeignKeyConstraint baseColumnNames="KEY_2" baseTableName="CAPACITY" constraintName="FK_CAPACITY_KEY_2" referencedColumnNames="NAME" referencedTableName="KEYWORD"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-35">
+        <dropForeignKeyConstraint baseTableName="ITEM_CAPACITY" constraintName="FK_DEPLOYMENT_CAPACITY_CAPACITY"/>
+        <addForeignKeyConstraint baseColumnNames="CAPACITY_ID" baseTableName="ITEM_CAPACITY" constraintName="FK_DEPLOYMENT_CAPACITY_CAPACITY" referencedColumnNames="ID" referencedTableName="CAPACITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-36">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT" constraintName="FK_DEPLOYMENT_FACTION"/>
+        <addForeignKeyConstraint baseColumnNames="FACTION" baseTableName="DEPLOYMENT" constraintName="FK_DEPLOYMENT_FACTION" referencedColumnNames="NAME" referencedTableName="FACTION"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-37">
+        <dropForeignKeyConstraint baseTableName="DICE" constraintName="FK_DICE_DICE_TYPE"/>
+        <addForeignKeyConstraint baseColumnNames="DICE_TYPE" baseTableName="DICE" constraintName="FK_DICE_DICE_TYPE" referencedColumnNames="NAME" referencedTableName="DICE_TYPE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-38">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT_TRAIT" constraintName="FK_bnhe11r365vh6kr5ppdkjmm5m"/>
+        <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_TRAIT" constraintName="FK_bnhe11r365vh6kr5ppdkjmm5m" referencedColumnNames="ID" referencedTableName="DEPLOYMENT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-39">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT_ABILITY" constraintName="FK_ei8k2y5o84ukus47mfvnaeh59"/>
+        <addForeignKeyConstraint baseColumnNames="ABILITY_NAME" baseTableName="DEPLOYMENT_ABILITY" constraintName="FK_ei8k2y5o84ukus47mfvnaeh59" referencedColumnNames="NAME" referencedTableName="ABILITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-40">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT_TRAIT" constraintName="FK_kk5p4h0l2daua70kx3xi0gi2i"/>
+        <addForeignKeyConstraint baseColumnNames="TRAIT_NAME" baseTableName="DEPLOYMENT_TRAIT" constraintName="FK_kk5p4h0l2daua70kx3xi0gi2i" referencedColumnNames="NAME" referencedTableName="TRAIT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-41">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT_CAPACITY" constraintName="FK_mi8wjlo0ygqyytkd616enhw0n"/>
+        <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_CAPACITY" constraintName="FK_mi8wjlo0ygqyytkd616enhw0n" referencedColumnNames="ID" referencedTableName="DEPLOYMENT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-42">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT_ATTACK" constraintName="FK_mv46yceqlixbkpgnun8i0rera"/>
+        <addForeignKeyConstraint baseColumnNames="DICE_NAME" baseTableName="DEPLOYMENT_ATTACK" constraintName="FK_mv46yceqlixbkpgnun8i0rera" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-43">
+        <dropForeignKeyConstraint baseTableName="DEPLOYMENT_DEFENSE" constraintName="FK_p2p1humuwlbyhvvh5k11ke62b"/>
+        <addForeignKeyConstraint baseColumnNames="DICE_NAME" baseTableName="DEPLOYMENT_DEFENSE" constraintName="FK_p2p1humuwlbyhvvh5k11ke62b" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-44">
+        <dropDefaultValue columnDataType="int" columnName="ID" tableName="CAPACITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-45">
+        <dropDefaultValue columnDataType="int" columnName="ID" tableName="DEPLOYMENT"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-46">
+        <dropUniqueConstraint constraintName="IDX_DEPLOYMENT_ATTACK" tableName="DEPLOYMENT_ATTACK"/>
+        <addUniqueConstraint columnNames="DEPLOYMENT_ID, RANK" constraintName="IDX_DEPLOYMENT_ATTACK" tableName="DEPLOYMENT_ATTACK"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-47">
+        <dropUniqueConstraint constraintName="IDX_DEPLOYMENT_CAPACITY" tableName="DEPLOYMENT_CAPACITY"/>
+        <addUniqueConstraint columnNames="DEPLOYMENT_ID, RANK" constraintName="IDX_DEPLOYMENT_CAPACITY" tableName="DEPLOYMENT_CAPACITY"/>
+    </changeSet>
+    <changeSet author="tourneur (generated)" id="1521032651353-48">
+        <dropUniqueConstraint constraintName="IDX_DEPLOYMENT_DEFENSE" tableName="DEPLOYMENT_DEFENSE"/>
+        <addUniqueConstraint columnNames="DEPLOYMENT_ID, RANK" constraintName="IDX_DEPLOYMENT_DEFENSE" tableName="DEPLOYMENT_DEFENSE"/>
+    </changeSet>
+</databaseChangeLog>

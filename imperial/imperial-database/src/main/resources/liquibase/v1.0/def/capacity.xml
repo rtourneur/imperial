@@ -1,0 +1,33 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-imperial-capacity-1">
+    <createTable tableName="CAPACITY" schemaName="IMPERIAL" remarks="Table for capacities">
+      <column autoIncrement="true" name="ID" type="INTEGER" remarks="Identifier of the capacity">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="CAPACITY_PK" />
+      </column>
+      <column name="KEY_1" type="VARCHAR(30)" remarks="First capacity">
+        <constraints nullable="false" />
+      </column>
+      <column name="VALUE_1" type="INT" remarks="Value of the first capacity" />
+      <column name="KEY_2" type="VARCHAR(30)" remarks="Second capacity" />
+      <column name="VALUE_2" type="INT" remarks="Value of the second capacity" />
+      <column name="SURGE" type="INT" remarks="Surge count of the capacity" />
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0" >
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="KEY_1" baseTableName="CAPACITY" constraintName="FK_CAPACITY_KEY_1" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="KEYWORD"/>
+    <addForeignKeyConstraint baseColumnNames="KEY_2" baseTableName="CAPACITY" constraintName="FK_CAPACITY_KEY_2" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="KEYWORD"/>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-capacity-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/capacity.csv" separator="|" tableName="CAPACITY" >
+      <column name="ID" type="NUMERIC" />
+      <column name="VALUE_1" type="NUMERIC" />
+      <column name="VALUE_2" type="NUMERIC" />
+      <column name="SURGE" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,20 @@
+NAME|MESSAGE_CODE
+Damage|keyword.damage
+Block|keyword.block
+Evade|keyword.evade
+Accuracy|keyword.accuracy
+Bleed|keyword.bleed
+Habitat : Snow|keyword.habitat-snow
+Habitat : Desert|keyword.habitat-desert
+Massive|keyword.massive
+Mobile|keyword.mobile
+Reach|keyword.reach
+Blast|keyword.blast
+Cleave|keyword.cleave
+Focus|keyword.focus
+Pierce|keyword.pierce
+Recover|keyword.recover
+Stun|keyword.stun
+Surge|keyword.surge
+Weaken|keyword.weaken
+Hide|keyword.hide

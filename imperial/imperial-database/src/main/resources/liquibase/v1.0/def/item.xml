@@ -1,0 +1,127 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-imperial-item-1">
+    <createTable tableName="ITEM" schemaName="IMPERIAL" remarks="Table for items">
+      <column autoIncrement="true" name="ID" type="INTEGER" remarks="Identifier of the item">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="ITEM_PK" />
+      </column>
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="NAME_CODE" type="VARCHAR(40)" remarks="Name code of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="DESCRIPTION_CODE" type="VARCHAR(40)" remarks="Description code of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="RULE_CODE" type="VARCHAR(40)" remarks="Rule code of the item" />
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the item" >
+        <constraints nullable="false" />
+      </column>
+      <column name="ITEM_CATEGORY" type="VARCHAR(6)" remarks="Category of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="ITEM_TYPE" type="VARCHAR(12)" remarks="Type of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="ATTACK_TYPE" type="VARCHAR(6)" remarks="Attack type of the item'" >
+        <constraints nullable="false" />
+      </column>
+      <column name="MODIFICATIONS" type="INTEGER" remarks="Modification count of the item" />
+      <column name="COST" type="INTEGER" remarks="Cost of the item" />
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="ITEM" constraintName="FK_ITEM_EXPANSION"
+      deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-item_trait-1">
+    <createTable tableName="ITEM_TRAIT">
+      <column name="ITEM_ID" type="INTEGER" remarks="Identifier of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="TRAIT_NAME" type="VARCHAR(30)" remarks="Name of the trait">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="ITEM_ID" baseTableName="ITEM_TRAIT"
+      constraintName="FK_ITEM_TRAIT_ITEM" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID"
+      referencedTableName="ITEM" />
+    <addForeignKeyConstraint baseColumnNames="TRAIT_NAME" baseTableName="ITEM_TRAIT"
+      constraintName="FK_ITEM_TRAIT_TRAIT" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="TRAIT" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-item_capacity-1">
+    <createTable tableName="ITEM_CAPACITY">
+      <column name="ITEM_ID" type="INTEGER" remarks="Identifier of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="RANK" type="INTEGER" remarks="Rank of the capacity ">
+        <constraints nullable="false" />
+      </column>
+      <column name="CAPACITY_ID" type="INTEGER" remarks="Identifier of the capacity">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="ITEM_ID" baseTableName="ITEM_CAPACITY"
+      constraintName="FK_ITEM_CAPACITY_ITEM" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID"
+      referencedTableName="ITEM" />
+    <addForeignKeyConstraint baseColumnNames="CAPACITY_ID" baseTableName="ITEM_CAPACITY"
+      constraintName="FK_ITEM_CAPACITY_CAPACITY" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID"
+      referencedTableName="CAPACITY" />
+    <addUniqueConstraint columnNames="ITEM_ID, RANK" constraintName="IDX_ITEM_CAPACITY" tableName="ITEM_CAPACITY" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-item_attack-1">
+    <createTable tableName="ITEM_ATTACK">
+      <column name="ITEM_ID" type="INTEGER" remarks="Identifier of the item">
+        <constraints nullable="false" />
+      </column>
+      <column name="RANK" type="INTEGER" remarks="Rank of the attack dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="DICE_NAME" type="VARCHAR(30)" remarks="Name of the attack dice">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="ITEM_ID" baseTableName="ITEM_ATTACK"
+      constraintName="FK_ITEM_ATTACK_ITEM" deferrable="false" initiallyDeferred="false" referencedColumnNames="ID"
+      referencedTableName="ITEM" />
+    <addForeignKeyConstraint baseColumnNames="DICE_NAME" baseTableName="ITEM_ATTACK"
+      constraintName="FK_ITEM_ATTACK_DICE" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="DICE" />
+    <addUniqueConstraint columnNames="ITEM_ID, RANK" constraintName="IDX_ITEM_ATTACK" tableName="ITEM_ATTACK" />
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-item-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/item.csv"
+      separator="|" tableName="ITEM">
+      <column name="ID" type="NUMERIC" />
+      <column name="MODIFICATIONS" type="NUMERIC" />
+      <column name="COST" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-item_trait-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/item_trait.csv"
+      separator="|" tableName="ITEM_TRAIT">
+      <column name="ITEM_ID" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-item_capacity-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/item_capacity.csv"
+      separator="|" tableName="ITEM_CAPACITY">
+      <column name="ITEM_ID" type="NUMERIC" />
+      <column name="RANK" type="NUMERIC" />
+      <column name="CAPACITY_ID" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-item_attack-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/item_attack.csv"
+      separator="|" tableName="ITEM_ATTACK">
+      <column name="ITEM_ID" type="NUMERIC" />
+      <column name="RANK" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

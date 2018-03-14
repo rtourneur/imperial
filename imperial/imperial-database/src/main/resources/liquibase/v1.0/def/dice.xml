@@ -1,0 +1,61 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-imperial-dice-1">
+    <createTable tableName="DICE" schemaName="IMPERIAL" remarks="Table for dices">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the dice">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="DICE_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="DICE_TYPE" type="VARCHAR(30)" remarks="Type of the dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="DICE_TYPE" baseTableName="DICE" constraintName="FK_DICE_DICE_TYPE" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE_TYPE"/>
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-dice_side-1">
+    <createTable tableName="DICE_SIDE" schemaName="IMPERIAL" remarks="Table for dice sides">
+      <column name="DICE" type="VARCHAR(30)" remarks="Name of the dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="SIDE" type="INT" remarks="Side of the dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="DODGE" type="BOOLEAN" remarks="Dodge indicator of the dice side" />
+      <column name="ACCURACY" type="INT" remarks="Accuracy value of the dice side" />
+      <column name="DAMAGE" type="INT" remarks="Damage value of the dice side" />
+      <column name="SURGE" type="INT" remarks="Surge value of the dice side" />
+      <column name="BLOCK" type="INT" remarks="Block value of the dice side" />
+      <column name="EVADE" type="INT" remarks="Evade value of the dice side" />
+      <column name="ICON" type="VARCHAR(30)" remarks="Icon of the dice side" />
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="DICE" baseTableName="DICE_SIDE" constraintName="FK_DICE_SIDE_DICE" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE"/>
+    <createIndex schemaName="IMPERIAL" indexName="IDX_DICE_SIDE" tableName="DICE_SIDE" unique="true">
+      <column name="DICE" />
+      <column name="SIDE" />
+    </createIndex>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-dice-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/dice.csv" separator="|" tableName="DICE" />
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-dice_side-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/dice_side.csv" separator="|" tableName="DICE_SIDE">
+      <column name="DICE" type="STRING" />
+      <column name="SIDE" type="NUMERIC" />
+      <column name="DODGE" type="BOOLEAN" />
+      <column name="ACCURACY" type="NUMERIC" />
+      <column name="DAMAGE" type="NUMERIC" />
+      <column name="SURGE" type="NUMERIC" />
+      <column name="BLOCK" type="NUMERIC" />
+      <column name="EVADE" type="NUMERIC" />
+      <column name="ICON" type="STRING" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-imperial-expansion-1">
+    <createTable tableName="EXPANSION" schemaName="IMPERIAL" remarks="Table for expansions">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the expansion">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="EXPANSION_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the expansion">
+        <constraints nullable="false" />
+      </column>
+      <column name="TYPE" type="VARCHAR(10)" remarks="Type of the expansion">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0" >
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-expansion-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/expansion.csv" separator="|" tableName="EXPANSION" />
+  </changeSet>
+
+</databaseChangeLog>

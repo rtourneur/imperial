@@ -1,0 +1,16 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <!-- Création des tables -->
+  <include file="liquibase/v1.0/def/faction.xml" />
+  <include file="liquibase/v1.0/def/expansion.xml" />
+  <include file="liquibase/v1.0/def/keyword.xml" />
+  <include file="liquibase/v1.0/def/ability.xml" />
+  <include file="liquibase/v1.0/def/capacity.xml" />
+  <include file="liquibase/v1.0/def/trait.xml" />
+  <include file="liquibase/v1.0/def/dice_type.xml" />
+  <include file="liquibase/v1.0/def/dice.xml" />
+  <include file="liquibase/v1.0/def/deployment.xml" />
+  <include file="liquibase/v1.0/def/item.xml" />
+</databaseChangeLog>

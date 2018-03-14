@@ -1,0 +1,53 @@
+ID|NAME|NAME_CODE|DESCRIPTION_CODE|RULE_CODE|EXPANSION|ITEM_CATEGORY|ITEM_TYPE|ATTACK_TYPE|MODIFICATIONS|COST
+1|DH-17|item.dh-17|item.dh-17.desc|item.dh-17.rule|Imperial Assault|tier1|Weapon|Ranged|2|200
+2|E-11|item.e-11|item.e-11.desc|item.e-11.rule|Imperial Assault|tier1|Weapon|Ranged|2|400
+3|DL-44|item.dl-44|item.dl-44.desc|item.dl-44.rule|Imperial Assault|tier1|Weapon|Ranged|2|500
+4|Vibroblade|item.vibroblade|item.vibroblade.desc|item.vibroblade.rule|Imperial Assault|tier1|Weapon|Melee|1|300
+5|Armored Gauntlets|item.armored-gauntlets|item.armored-gauntlets.desc|item.armored-gauntlets.rule|Imperial Assault|tier1|Weapon|Melee|null|300
+6|Balanced Hilt|item.balanced-hilt|item.balanced-hilt.desc|item.balanced-hilt.rule|Imperial Assault|tier1|Modification|Melee|null|300
+7|Extended Haft|item.extended-haft|item.extended-haft.desc|item.extended-haft.rule|Imperial Assault|tier1|Modification|Melee|null|300
+8|Tactical Display|item.tactical-display|item.tactical-display.desc|item.tactical-display.rule|Imperial Assault|tier1|Modification|Ranged|null|300
+9|Marksman Barrel|item.marksman-barrel|item.marksman-barrel.desc|item.marksman-barrel.rule|Imperial Assault|tier1|Modification|Ranged|null|300
+10|Combat Coat|item.combat-coat|item.combat-coat.desc|item.combat-coat.rule|Imperial Assault|tier1|Armor|None|null|500
+11|Survival Gear|item.survival-gear|item.survival-gear.desc|item.survival-gear.rule|Imperial Assault|tier1|Accessory|None|null|250
+12|Portable Medkit|item.portable-medkit|item.portable-medkit.desc|item.portable-medkit.rule|Imperial Assault|tier1|Accessory|None|null|450
+13|Combat Coat|item.combat-coat|item.combat-coat.desc|item.combat-coat.rule|Imperial Assault|tier2|Armor|None|null|500
+14|A280|item.a280|item.a280.desc|item.a280.rule|Imperial Assault|tier2|Weapon|Ranged|2|600
+15|T-21|item.t-21|item.t-21.desc|item.t-21.rule|Imperial Assault|tier2|Weapon|Ranged|null|900
+16|434 "Deathhammer"|item.434-"deathhammer"|item.434-"deathhammer".desc|item.434-"deathhammer".rule|Imperial Assault|tier2|Weapon|Ranged|1|600
+17|BD-1 Vibro-Ax|item.bd-1-vibro-ax|item.bd-1-vibro-ax.desc|item.bd-1-vibro-ax.rule|Imperial Assault|tier2|Weapon|Melee|2|600
+18|Vibro Knucklers|item.vibro-knucklers|item.vibro-knucklers.desc|item.vibro-knucklers.rule|Imperial Assault|tier2|Weapon|Melee|null|400
+19|High-Impact Guard|item.high-impact-guard|item.high-impact-guard.desc|item.high-impact-guard.rule|Imperial Assault|tier2|Modification|Melee|null|500
+20|Spread Barrel|item.spread-barrel|item.spread-barrel.desc|item.spread-barrel.rule|Imperial Assault|tier2|Modification|Ranged|null|300
+21|Overcharger|item.overcharger|item.overcharger.desc|item.overcharger.rule|Imperial Assault|tier2|Modification|Ranged|null|300
+22|Laminate Armor|item.laminate-armor|item.laminate-armor.desc|item.laminate-armor.rule|Imperial Assault|tier2|Armor|None|null|700
+23|Extra Ammunition|item.extra-ammunition|item.extra-ammunition.desc|item.extra-ammunition.rule|Imperial Assault|tier2|Accessory|None|null|300
+24|Slicing Tools|item.slicing-tools|item.slicing-tools.desc|item.slicing-tools.rule|Imperial Assault|tier2|Accessory|None|null|250
+25|Pulse Cannon|item.pulse-cannon|item.pulse-cannon.desc|item.pulse-cannon.rule|Imperial Assault|tier3|Weapon|Ranged|1|1200
+26|DXR-6|item.dxr-6|item.dxr-6.desc|item.dxr-6.rule|Imperial Assault|tier3|Weapon|Ranged|null|1000
+27|Sporting Blaster|item.sporting-blaster|item.sporting-blaster.desc|item.sporting-blaster.rule|Imperial Assault|tier3|Weapon|Ranged|1|900
+28|Force Pike|item.force-pike|item.force-pike.desc|item.force-pike.rule|Imperial Assault|tier3|Weapon|Melee|1|1100
+29|Laminate Armor|item.laminate-armor|item.laminate-armor.desc|item.laminate-armor.rule|Imperial Assault|tier3|Armor|None|null|700
+30|Personal Shields|item.personal-shields|item.personal-shields.desc|item.personal-shields.rule|Imperial Assault|tier3|Accessory|None|null|550
+31|Reinforced Helmet|item.reinforced-helmet|item.reinforced-helmet.desc|item.reinforced-helmet.rule|Imperial Assault|tier3|Accessory|None|null|300
+32|Combat Visor|item.combat-visor|item.combat-visor.desc|item.combat-visor.rule|Imperial Assault|tier3|Accessory|None|null|350
+33|Combat Knife|item.combat-knife|item.combat-knife.desc|item.combat-knife.rule|Imperial Assault|tier3|Accessory|None|null|500
+34|Shock Emitter|item.shock-emitter|item.shock-emitter.desc|item.shock-emitter.rule|Imperial Assault|tier3|Modification|Melee|null|500
+35|Disruption Cell|item.disruption-cell|item.disruption-cell.desc|item.disruption-cell.rule|Imperial Assault|tier3|Modification|Ranged|null|600
+36|Telescoping Sights|item.telescoping-sights|item.telescoping-sights.desc|item.telescoping-sights.rule|Imperial Assault|tier3|Modification|Ranged|null|400
+37|Shu Yen's Lightsaber|item.shu-yens-lightsaber|item.shu-yens-lightsaber.desc|item.shu-yens-lightsaber.rule|Imperial Assault|reward|Weapon|Melee|null|null
+38|Gaffi Stick|item.gaffi-stick|item.gaffi-stick.desc|item.gaffi-stick.rule|Twin Shadows|tier1|Weapon|Melee|1|200
+39|Tatooine Hunting Rifle|item.tatooine-hunting-rifle|item.tatooine-hunting-rifle.desc|item.tatooine-hunting-rifle.rule|Twin Shadows|tier1|Weapon|Ranged|1|250
+40|EE-3 Carbine|item.ee-3-carbine|item.ee-3-carbine.desc|item.ee-3-carbine.rule|Twin Shadows|tier2|Weapon|Ranged|2|550
+41|Plasma Cell|item.plasma-cell|item.plasma-cell.desc|item.plasma-cell.rule|Twin Shadows|tier2|Modification|Ranged|null|450
+42|DLT-19|item.dlt-19|item.dlt-19.desc|item.dlt-19.rule|Twin Shadows|tier3|Weapon|Ranged|1|950
+43|Hidden Blade|item.hidden-blade|item.hidden-blade.desc|item.hidden-blade.rule|Twin Shadows|tier3|Accessory|None|null|300
+44|DDC Defender|item.ddc-defender|item.ddc-defender.desc|item.ddc-defender.rule|Return to Hoth|tier1|Weapon|Ranged|null|550
+45|Under-Barrel HH-4|item.under-barrel-hh-4|item.under-barrel-hh-4.desc|item.under-barrel-hh-4.rule|Return to Hoth|tier1|Modification|Ranged|null|300
+46|Vibroknife|item.vibroknife|item.vibroknife.desc|item.vibroknife.rule|Return to Hoth|tier1|Weapon|Melee|null|150
+47|Cybernetic Arm|item.cybernetic-arm|item.cybernetic-arm.desc|item.cybernetic-arm.rule|Return to Hoth|tier2|Accessory|None|null|350
+48|Environment Hazard Suit|item.environment-hazard-suit|item.environment-hazard-suit.desc|item.environment-hazard-suit.rule|Return to Hoth|tier2|Armor|None|null|600
+49|Stun Baton|item.stun-baton|item.stun-baton.desc|item.stun-baton.rule|Return to Hoth|tier2|Weapon|Melee|1|500
+50|Concussion Grenades|item.concussion-grenades|item.concussion-grenades.desc|item.concussion-grenades.rule|Return to Hoth|tier3|Accessory|None|null|400
+51|Valken-38 Carabine|item.valken-38-carabine|item.valken-38-carabine.desc|item.valken-38-carabine.rule|Return to Hoth|tier3|Weapon|Ranged|1|1250
+52|Vibrogenerator|item.vibrogenerator|item.vibrogenerator.desc|item.vibrogenerator.rule|Return to Hoth|tier3|Modification|Melee|null|350

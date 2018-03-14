@@ -1,0 +1,199 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-imperial-deployment-1">
+    <createTable tableName="DEPLOYMENT" schemaName="IMPERIAL" remarks="Table for deployments">
+      <column autoIncrement="true" name="ID" type="INTEGER" remarks="Identifier of the deployment">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="DEPLOYMENT_PK" />
+      </column>
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="NAME_CODE" type="VARCHAR(40)" remarks="Name code of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="TITLE_CODE" type="VARCHAR(40)" remarks="Title code of the deployment" />
+      <column name="ELITE" type="BOOLEAN" remarks="Elite indicator of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="UNIQUENESS" type="BOOLEAN" remarks="Uniqueness indicator of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="MODE" type="VARCHAR(10)" remarks="Mode of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="FACTION" type="VARCHAR(30)" remarks="Faction of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="COUNT" type="INTEGER" remarks="Figures count of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="COST" type="INTEGER" remarks="Cost of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="REINFORCE" type="INTEGER" remarks="Reinforce cost of the deployment" />
+      <column name="SIZE" type="VARCHAR(8)" remarks="Size of the deployment's figure">
+        <constraints nullable="false" />
+      </column>
+      <column name="HEALTH" type="INTEGER" remarks="Health of the deployment's figure">
+        <constraints nullable="false" />
+      </column>
+      <column name="SPEED" type="INTEGER" remarks="Speed of the deployment's figure">
+        <constraints nullable="false" />
+      </column>
+      <column name="ATTACK_TYPE" type="VARCHAR(6)" remarks="Attack type of the deployment's figure">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="FACTION" baseTableName="DEPLOYMENT"
+      constraintName="FK_DEPLOYMENT_FACTION" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="FACTION" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-deployment_trait-1">
+    <createTable tableName="DEPLOYMENT_TRAIT">
+      <column name="DEPLOYMENT_ID" type="INTEGER" remarks="Identifier of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="TRAIT_NAME" type="VARCHAR(30)" remarks="Name of the trait">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_TRAIT"
+      constraintName="FK_DEPLOYMENT_TRAIT_DEPLOYMENT" deferrable="false" initiallyDeferred="false"
+      referencedColumnNames="ID" referencedTableName="DEPLOYMENT" />
+    <addForeignKeyConstraint baseColumnNames="TRAIT_NAME" baseTableName="DEPLOYMENT_TRAIT"
+      constraintName="FK_DEPLOYMENT_TRAIT_TRAIT" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="TRAIT" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-deployment_capacity-1">
+    <createTable tableName="DEPLOYMENT_CAPACITY">
+      <column name="DEPLOYMENT_ID" type="INTEGER" remarks="Identifier of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="RANK" type="INTEGER" remarks="Rank of the capacity ">
+        <constraints nullable="false" />
+      </column>
+      <column name="CAPACITY_ID" type="INTEGER" remarks="Identifier of the capacity">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_CAPACITY"
+      constraintName="FK_DEPLOYMENT_CAPACITY_DEPLOYMENT" deferrable="false" initiallyDeferred="false"
+      referencedColumnNames="ID" referencedTableName="DEPLOYMENT" />
+    <addForeignKeyConstraint baseColumnNames="CAPACITY_ID" baseTableName="DEPLOYMENT_CAPACITY"
+      constraintName="FK_DEPLOYMENT_CAPACITY_CAPACITY" deferrable="false" initiallyDeferred="false"
+      referencedColumnNames="ID" referencedTableName="CAPACITY" />
+    <addUniqueConstraint columnNames="DEPLOYMENT_ID, RANK" constraintName="IDX_DEPLOYMENT_CAPACITY"
+      tableName="DEPLOYMENT_CAPACITY" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-deployment_ability-1">
+    <createTable tableName="DEPLOYMENT_ABILITY">
+      <column name="DEPLOYMENT_ID" type="INTEGER" remarks="Identifier of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="ABILITY_NAME" type="VARCHAR(30)">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="ABILITY_NAME" baseTableName="DEPLOYMENT_ABILITY"
+      constraintName="FK_DEPLOYMENT_ABILITY_ABILITY" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="ABILITY" />
+    <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_ABILITY"
+      constraintName="FK_DEPLOYMENT_ABILITY_DEPLOYMENT" deferrable="false" initiallyDeferred="false"
+      referencedColumnNames="ID" referencedTableName="DEPLOYMENT" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-deployment_defense-1">
+    <createTable tableName="DEPLOYMENT_DEFENSE">
+      <column name="DEPLOYMENT_ID" type="INTEGER" remarks="Identifier of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="RANK" type="INTEGER" remarks="Rank of the defense dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="DICE_NAME" type="VARCHAR(30)" remarks="Name of the defense dice">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_DEFENSE"
+      constraintName="FK_DEPLOYMENT_DEFENSE_DEPLOYMENT" deferrable="false" initiallyDeferred="false"
+      referencedColumnNames="ID" referencedTableName="DEPLOYMENT" />
+    <addForeignKeyConstraint baseColumnNames="DICE_NAME" baseTableName="DEPLOYMENT_DEFENSE"
+      constraintName="FK_DEPLOYMENT_DEFENSE_DICE" deferrable="false" initiallyDeferred="false"
+      referencedColumnNames="NAME" referencedTableName="DICE" />
+    <addUniqueConstraint columnNames="DEPLOYMENT_ID, RANK" constraintName="IDX_DEPLOYMENT_DEFENSE"
+      tableName="DEPLOYMENT_DEFENSE" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-deployment_attack-1">
+    <createTable tableName="DEPLOYMENT_ATTACK">
+      <column name="DEPLOYMENT_ID" type="INTEGER" remarks="Identifier of the deployment">
+        <constraints nullable="false" />
+      </column>
+      <column name="RANK" type="INTEGER" remarks="Rank of the attack dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="DICE_NAME" type="VARCHAR(30)" remarks="Name of the attack dice">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_ATTACK"
+      constraintName="FK_DEPLOYMENT_ATTACK_DEPLOYMENT" deferrable="false" initiallyDeferred="false"
+      referencedColumnNames="ID" referencedTableName="DEPLOYMENT" />
+    <addForeignKeyConstraint baseColumnNames="DICE_NAME" baseTableName="DEPLOYMENT_ATTACK"
+      constraintName="FK_DEPLOYMENT_ATTACK_DICE" deferrable="false" initiallyDeferred="false"
+      referencedColumnNames="NAME" referencedTableName="DICE" />
+    <addUniqueConstraint columnNames="DEPLOYMENT_ID, RANK" constraintName="IDX_DEPLOYMENT_ATTACK"
+      tableName="DEPLOYMENT_ATTACK" />
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-deployment-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/deployment.csv"
+      separator="|" tableName="DEPLOYMENT">
+      <column name="ID" type="NUMERIC" />
+      <column name="ELITE" type="BOOLEAN" />
+      <column name="UNIQUE" type="BOOLEAN" />
+      <column name="COUNT" type="NUMERIC" />
+      <column name="COST" type="NUMERIC" />
+      <column name="REINFORCE" type="NUMERIC" />
+      <column name="HEALTH" type="NUMERIC" />
+      <column name="SPEED" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-deployment_trait-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/deployment_trait.csv"
+      separator="|" tableName="DEPLOYMENT_TRAIT">
+      <column name="DEPLOYMENT_ID" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-deployment_capacity-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/deployment_capacity.csv"
+      separator="|" tableName="DEPLOYMENT_CAPACITY">
+      <column name="DEPLOYMENT_ID" type="NUMERIC" />
+      <column name="RANK" type="NUMERIC" />
+      <column name="CAPACITY_ID" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-deployment_ability-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/deployment_ability.csv"
+      separator="|" tableName="DEPLOYMENT_ABILITY">
+      <column name="DEPLOYMENT_ID" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-deployment_defense-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/deployment_defense.csv"
+      separator="|" tableName="DEPLOYMENT_DEFENSE">
+      <column name="DEPLOYMENT_ID" type="NUMERIC" />
+      <column name="RANK" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-deployment_attack-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/deployment_attack.csv"
+      separator="|" tableName="DEPLOYMENT_ATTACK">
+      <column name="DEPLOYMENT_ID" type="NUMERIC" />
+      <column name="RANK" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

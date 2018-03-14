@@ -1,0 +1,91 @@
+NAME|MESSAGE_CODE|ABILITY_CODE|ACTION|SURGE
+ACP Scattergun|ability.acp-scattergun|ability.acp-scattergun.code|null|null
+Advanced Firepower|ability.advanced-firepower|ability.advanced-firepower.code|null|null
+Aggressive Negotiations|ability.aggressive-negotiations|ability.aggressive-negotiations.code|null|1
+Aim|ability.aim|ability.aim.code|null|null
+Arsenal|ability.arsenal|ability.arsenal.code|null|null
+Assault|ability.assault|ability.assault.code|null|null
+Awkward|ability.awkward|ability.awkward.code|null|null
+Battlefield Leadership|ability.battlefield-leadership|ability.battlefield-leadership.code|1|null
+Bombardment|ability.bombardment|ability.bombardment.code|1|null
+Brutality|ability.brutality|ability.brutality.code|1|null
+Charge|ability.charge|ability.charge.code|1|null
+Close Quarters|ability.close-quarters|ability.close-quarters.code|1|null
+Combat Suit|ability.combat-suit|ability.combat-suit.code|null|null
+Contempt|ability.contempt|ability.contempt.code|null|null
+Cover|ability.cover|ability.cover.code|null|null
+Critical Hit|ability.critical-hit|ability.critical-hit.code|null|1
+Cunning|ability.cunning|ability.cunning.code|null|null
+Defensible|ability.defensible|ability.defensible.code|null|null
+Distracting|ability.distracting|ability.distracting.code|null|null
+Efficient Travel|ability.efficient-travel|ability.efficient-travel.code|null|null
+Enraged|ability.enraged|ability.enraged.code|null|null
+Environnement Recovery Gear|ability.environnement-recovery-gear|ability.environnement-recovery-gear.code|1|null
+Epic Arsenal|ability.epic-arsenal|ability.epic-arsenal.code|null|null
+Executive Order|ability.executive-order|ability.executive-order.code|1|null
+Executor|ability.executor|ability.executor.code|null|null
+Fighting Knife|ability.fighting-knife|ability.fighting-knife.code|null|1
+Focus Fire|ability.focus-fire|ability.focus-fire.code|2|null
+Force Choke|ability.force-choke|ability.force-choke.code|null|null
+Foresight|ability.foresight|ability.foresight.code|null|null
+Forward Vengeance|ability.forward-vengeance|ability.forward-vengeance.code|null|null
+Front Line|ability.front-line|ability.front-line.code|null|null
+General's Orders|ability.generals-orders|ability.generals-orders.code|1|null
+Get Into Position|ability.get-into-position|ability.get-into-position.code|2|null
+Hair Trigger|ability.hair-trigger|ability.hair-trigger.code|null|null
+Hunger|ability.hunger|ability.hunger.code|null|null
+Improper Procedure|ability.improper-procedure|ability.improper-procedure.code|1|null
+Inspiring|ability.inspiring|ability.inspiring.code|null|null
+Last Stand|ability.last-stand|ability.last-stand.code|null|null
+Medical Loadout|ability.medical-loadout|ability.medical-loadout.code|1|null
+Military Efficiency|ability.military-efficiency|ability.military-efficiency.code|null|1
+Mon Cala Special Forces|ability.mon-cala-special-forces|ability.mon-cala-special-forces.code|null|null
+Nimble|ability.nimble|ability.nimble.code|null|null
+Non-Sentient|ability.non-sentient|ability.non-sentient.code|null|null
+On My Mark|ability.on-my-mark|ability.on-my-mark.code|null|null
+Order|ability.order|ability.order.code|1|null
+Overload|ability.overload|ability.overload.code|null|null
+Pounce|ability.pounce|ability.pounce.code|1|null
+Priority Target|ability.priority-target|ability.priority-target.code|null|null
+Protector|ability.protector|ability.protector.code|null|null
+Punishment|ability.punishment|ability.punishment.code|null|1
+Relentless|ability.relentless|ability.relentless.code|null|null
+Return Fire|ability.return-fire|ability.return-fire.code|null|null
+Saber Strike|ability.saber-strike|ability.saber-strike.code|1|null
+Scattergun|ability.scattergun|ability.scattergun.code|null|null
+Self Destruct|ability.self-destruct|ability.self-destruct.code|null|null
+Sentinel|ability.sentinel|ability.sentinel.code|null|null
+Set Your Sight|ability.set-your-sight|ability.set-your-sight.code|2|null
+Shattering Blow|ability.shattering-blow|ability.shattering-blow.code|null|null
+Slam|ability.slam|ability.slam.code|1|null
+Squad Training|ability.squad-training|ability.squad-training.code|null|null
+Tactical Maneuver|ability.tactical-maneuver|ability.tactical-maneuver.code|1|null
+Targeting Computer|ability.targeting-computer|ability.targeting-computer.code|null|null
+Tripod|ability.tripod|ability.tripod.code|null|null
+Trooper Assault|ability.trooper-assault|ability.trooper-assault.code|null|null
+Vengeance|ability.vengeance|ability.vengeance.code|null|null
+Versatile Weaponry|ability.versatile-weaponry|ability.versatile-weaponry.code|null|null
+Composite Plating|ability.composite-plating|ability.composite-plating.code|null|null
+Firing Squad|ability.firing-squad|ability.firing-squad.code|1|null
+Squad Command|ability.squad-command|ability.squad-command.code|null|1
+Tusken Cycler|ability.tusken-cycler|ability.tusken-cycler.code|1|null
+Battle Presence|ability.battle-presence|ability.battle-presence.code|null|null
+Battle Discipline|ability.battle-discipline|ability.battle-discipline.code|null|null
+Close and Personal|ability.close-and-personal|ability.close-and-personal.code|1|null
+Into the frey|ability.into-the-frey|ability.into-the-frey.code|null|null
+Unstable Device|ability.unstable-device|ability.unstable-device.code|1|null
+Shady Contacts|ability.shady-contacts|ability.shady-contacts.code|null|null
+Inform|ability.inform|ability.inform.code|1|null
+Non-Combatant|ability.non-combatant|ability.non-combatant.code|null|null
+Service|ability.service|ability.service.code|1|null
+Computer Interface Arm|ability.computer-interface-arm|ability.computer-interface-arm.code|null|null
+Lucky|ability.lucky|ability.lucky.code|null|null
+Scomp Link|ability.scomp-link|ability.scomp-link.code|1|null
+Fury|ability.fury|ability.fury.code|null|null
+Parting Shot|ability.parting-shot|ability.parting-shot.code|null|null
+Disposable|ability.disposable|ability.disposable.code|null|null
+Smuggler's Instincts|ability.smugglers-instincts|ability.smugglers-instincts.code|1|null
+Slippery|ability.slippery|ability.slippery.code|null|null
+Improved Smuggler's Instincts|ability.improved-smugglers-instincts|ability.improved-smugglers-instincts.code|null|null
+Trample|ability.trample|ability.trample.code|1|null
+Stampede|ability.stampede|ability.stampede.code|null|null
