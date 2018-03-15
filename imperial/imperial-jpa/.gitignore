@@ -1,1 +1,7 @@
 /target/
+/.checkstyle
+/.classpath
+/.eclipse-pmd
+/.project
+/.settings/
+/derby.log
