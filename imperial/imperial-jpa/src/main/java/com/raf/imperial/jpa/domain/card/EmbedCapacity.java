@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The embeddable class for the deployment's capacities.
+ * The embeddable class for the card's capacities.
  * 
  * @author RAF
  */
@@ -38,7 +38,7 @@ public class EmbedCapacity implements Serializable {
 
   /** The Capacity. */
   @ManyToOne
-  @JoinColumn(name = "CAPACITY_ID", nullable = false, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_CAPACITY_CAPACITY"))
+  @JoinColumn(name = "CAPACITY_ID", nullable = false)
   private Capacity capacity;
 
   /**

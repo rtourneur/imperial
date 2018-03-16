@@ -8,7 +8,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import com.raf.imperial.jpa.dao.CapacityDao;
@@ -35,6 +34,9 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class DamageRuleTest extends AbstractRuleTest {
+
+  /** The tab character. */
+  private static final char TAB = '\t';
 
   /** The damage rule. */
   @Resource
@@ -248,6 +250,19 @@ public class DamageRuleTest extends AbstractRuleTest {
       damages = this.damageRule.getDamages(deployment);
       calculStat(builder, deployment, null, damages, ranged);
       stats.add(builder.toString());
+      List<Dice> dices = deploymentDao.getAttack(deployment);
+      replaceUndefinedDices(dices, deployment.getAbilities());
+      dices.add(this.diceDao.getById("Black"));
+      final List<Capacity> capacities = deploymentDao.getCapacities(deployment);
+      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
+      calculStat(builder, deployment, "Black", damages, ranged);
+      stats.add(builder.toString());
+      dices = deploymentDao.getAttack(deployment);
+      replaceUndefinedDices(dices, deployment.getAbilities());
+      dices.add(this.diceDao.getById("White"));
+      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
+      calculStat(builder, deployment, "White", damages, ranged);
+      stats.add(builder.toString());
     }
     final Faction imperial = this.factionDao.getById("Imperial");
     deployments = this.deploymentDao.getCampagn(imperial);
@@ -256,6 +271,19 @@ public class DamageRuleTest extends AbstractRuleTest {
       damages = this.damageRule.getDamages(deployment);
       calculStat(builder, deployment, null, damages, ranged);
       stats.add(builder.toString());
+      List<Dice> dices = deploymentDao.getAttack(deployment);
+      replaceUndefinedDices(dices, deployment.getAbilities());
+      dices.add(this.diceDao.getById("Black"));
+      final List<Capacity> capacities = deploymentDao.getCapacities(deployment);
+      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
+      calculStat(builder, deployment, "Black", damages, ranged);
+      stats.add(builder.toString());
+      dices = deploymentDao.getAttack(deployment);
+      replaceUndefinedDices(dices, deployment.getAbilities());
+      dices.add(this.diceDao.getById("White"));
+      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
+      calculStat(builder, deployment, "White", damages, ranged);
+      stats.add(builder.toString());
     }
     final Faction mercenary = this.factionDao.getById("Mercenary");
     deployments = this.deploymentDao.getCampagn(mercenary);
@@ -263,6 +291,19 @@ public class DamageRuleTest extends AbstractRuleTest {
       ranged = AttackTypeEnum.RANGED.equals(deployment.getAttackType());
       damages = this.damageRule.getDamages(deployment);
       calculStat(builder, deployment, null, damages, ranged);
+      stats.add(builder.toString());
+      List<Dice> dices = deploymentDao.getAttack(deployment);
+      replaceUndefinedDices(dices, deployment.getAbilities());
+      dices.add(this.diceDao.getById("Black"));
+      final List<Capacity> capacities = deploymentDao.getCapacities(deployment);
+      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
+      calculStat(builder, deployment, "Black", damages, ranged);
+      stats.add(builder.toString());
+      dices = deploymentDao.getAttack(deployment);
+      replaceUndefinedDices(dices, deployment.getAbilities());
+      dices.add(this.diceDao.getById("White"));
+      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
+      calculStat(builder, deployment, "White", damages, ranged);
       stats.add(builder.toString());
     }
     for (String string : stats) {
@@ -533,46 +574,52 @@ public class DamageRuleTest extends AbstractRuleTest {
   private void calculStat(final StringBuilder builder, final Deployment deployment, final String option,
       final Damages damages, final boolean ranged) {
     builder.setLength(0);
-    builder.append(StringUtils.rightPad(deployment.getName(), 20));
+    builder.append(deployment.getName()).append(TAB).append(deployment.getCost()).append(TAB)
+        .append(deployment.getCount()).append(TAB);
     if (deployment.isElite()) {
-      builder.append(" (elite)");
-    } else {
-      builder.append("        ");
+      builder.append("elite");
     }
+    builder.append(TAB);
     if (option != null) {
-      builder.append(" - ").append(StringUtils.rightPad(option, 20));
+      builder.append(option);
     }
+    builder.append(TAB);
     if (damages.getAccuracy() > 0) {
-      builder.append(" range " + damages.getAccuracy());
+      builder.append("range " + damages.getAccuracy());
     }
-    builder.append(" : damages [").append(damages.getMinDamage()).append('-').append(damages.getMaxDamage()).append('(')
-        .append(String.format("%1$,.2f", damages.getMoyDamage())).append(")]");
+    builder.append(TAB).append("damages [").append(damages.getMinDamage()).append('-').append(damages.getMaxDamage())
+        .append(']').append(TAB).append(String.format("%1$,.2f", damages.getMoyDamage())).append(TAB);
     if (ranged) {
-      builder.append(" accuracy [").append(damages.getMinAccuracy()).append('-').append(damages.getMaxAccuracy())
-          .append('(').append(String.format("%1$,.2f", damages.getMoyAccuracy())).append(")]");
+      builder.append("accuracy [").append(damages.getMinAccuracy()).append('-').append(damages.getMaxAccuracy())
+          .append(']').append(TAB).append(String.format("%1$,.2f", damages.getMoyAccuracy())).append(TAB);
+    } else {
+      builder.append(TAB).append(TAB);
     }
-    builder.append(" : surges [").append(damages.getMinSurge()).append('-').append(damages.getMaxSurge()).append('(')
-        .append(String.format("%1$,.2f", damages.getMoySurge())).append(")]");
+    builder.append("surges [").append(damages.getMinSurge()).append('-').append(damages.getMaxSurge()).append(']')
+        .append(TAB).append(String.format("%1$,.2f", damages.getMoySurge()));
   }
 
   private void calculStat(final StringBuilder builder, final Item item, final String option, final Damages damages,
       final boolean ranged) {
     builder.setLength(0);
-    builder.append(StringUtils.rightPad(item.getName(), 20));
+    builder.append(item.getName()).append(TAB).append(item.getCost()).append(TAB).append(TAB).append(TAB);
     if (option != null) {
-      builder.append(" - ").append(StringUtils.rightPad(option, 20));
+      builder.append(option);
     }
+    builder.append(TAB);
     if (damages.getAccuracy() > 0) {
       builder.append(" range " + damages.getAccuracy());
     }
-    builder.append(" : damages [").append(damages.getMinDamage()).append('-').append(damages.getMaxDamage()).append('(')
-        .append(String.format("%1$,.2f", damages.getMoyDamage())).append(")]");
+    builder.append(TAB).append("damages [").append(damages.getMinDamage()).append('-').append(damages.getMaxDamage())
+        .append(']').append(TAB).append(String.format("%1$,.2f", damages.getMoyDamage())).append(TAB);
     if (ranged) {
-      builder.append(" accuracy [").append(damages.getMinAccuracy()).append('-').append(damages.getMaxAccuracy())
-          .append('(').append(String.format("%1$,.2f", damages.getMoyAccuracy())).append(")]");
+      builder.append("accuracy [").append(damages.getMinAccuracy()).append('-').append(damages.getMaxAccuracy())
+          .append(']').append(TAB).append(String.format("%1$,.2f", damages.getMoyAccuracy())).append(TAB);
+    } else {
+      builder.append(TAB).append(TAB);
     }
-    builder.append(" : surges [").append(damages.getMinSurge()).append('-').append(damages.getMaxSurge()).append('(')
-        .append(String.format("%1$,.2f", damages.getMoySurge())).append(")]");
+    builder.append("surges [").append(damages.getMinSurge()).append('-').append(damages.getMaxSurge()).append(']')
+        .append(TAB).append(String.format("%1$,.2f", damages.getMoySurge()));
   }
 
   /**

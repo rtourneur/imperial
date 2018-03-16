@@ -50,6 +50,7 @@ public class ItemDaoTest extends AbstractDaoTest {
     assertEquals("item.bd-1-vibro-ax.rule", item.getRuleCode());
     assertEquals("Imperial Assault", item.getExpansionName());
     assertNotNull(item.getExpansion());
+    assertEquals("Imperial Assault", item.getExpansion().getName());
     assertEquals(ItemCategoryEnum.TIER_2, item.getItemCategory());
     assertEquals(ItemTypeEnum.WEAPON, item.getItemType());
     assertEquals(AttackTypeEnum.MELEE, item.getAttackType());

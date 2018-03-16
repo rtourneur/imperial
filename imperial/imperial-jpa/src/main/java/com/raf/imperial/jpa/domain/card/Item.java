@@ -2,6 +2,8 @@ package com.raf.imperial.jpa.domain.card;
 
 import java.util.List;
 
+import javax.persistence.AssociationOverride;
+import javax.persistence.AssociationOverrides;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -63,20 +65,32 @@ public class Item extends AbstractItem {
   /** The capacities. */
   @ElementCollection
   @CollectionTable(name = "ITEM_CAPACITY", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "ITEM_ID") }, indexes = {
+      @JoinColumn(name = "ITEM_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_ITEM_CAPACITY_ITEM")) }, indexes = {
           @Index(name = "IDX_ITEM_CAPACITY", columnList = "ITEM_ID, RANK", unique = true) })
+  @AssociationOverrides({ @AssociationOverride(name = "capacity", joinColumns = {
+      @JoinColumn(name = "CAPACITY_ID", referencedColumnName = "ID", nullable = false, foreignKey = @ForeignKey(name = "FK_ITEM_CAPACITY_CAPACITY")) }) })
   @OrderBy("rank")
   private List<EmbedCapacity> capacities;
 
   /** The attack pool dices. */
   @ElementCollection
   @CollectionTable(name = "ITEM_ATTACK", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "ITEM_ID", foreignKey = @ForeignKey(name = "FK_ITEM_ATTACK_ITEM")) }, indexes = {
+      @JoinColumn(name = "ITEM_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_ITEM_ATTACK_ITEM")) }, indexes = {
           @Index(name = "IDX_ITEM_ATTACK", columnList = "ITEM_ID, RANK", unique = true) })
+  @AssociationOverrides({ @AssociationOverride(name = "dice", joinColumns = {
+      @JoinColumn(name = "DICE_NAME", referencedColumnName = "NAME", nullable = false, foreignKey = @ForeignKey(name = "FK_ITEM_ATTACK_DICE")) }) })
+  @OrderBy("rank")
   private List<EmbedDice> attacks;
 
+  /**
+   * Append the properties for the to string builder.
+   * 
+   * @param builder
+   *          the builder
+   * @see AbstractItem#appendItem(ToStringBuilder)
+   */
   @Override
-  protected void appendItem(final ToStringBuilder builder) {
+  protected final void appendItem(final ToStringBuilder builder) {
     builder.append("traits", this.traits).append("cost", this.cost).append("capacities", this.capacities)
         .append("attacks", this.attacks);
   }

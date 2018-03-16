@@ -63,7 +63,7 @@ public class AbilityDaoTest extends AbstractDaoTest {
     final List<Ability> result = this.abilityDao.listAll();
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(90, result.size());
+    assertEquals(107, result.size());
   }
 
   /**

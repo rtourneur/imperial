@@ -1,0 +1,128 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet author="RAF" id="table-imperial-hero-1">
+    <createTable tableName="HERO" schemaName="IMPERIAL" remarks="Table for heroes">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the hero">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="HERO_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Name code of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="TITLE_CODE" type="VARCHAR(40)" remarks="Title code of the hero" />
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="HEALTH" type="INTEGER" remarks="Health of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="ENDURANCE" type="INTEGER" remarks="Endurance of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="SPEED" type="INTEGER" remarks="Speed of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="DICE_NAME" type="VARCHAR(30)" remarks="Defense dice of the hero" />
+      <column name="WOUNDED_HEALTH" type="INTEGER" remarks="Health (wounded) of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="WOUNDED_ENDURANCE" type="INTEGER" remarks="Endurance (wounded) of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="WOUNDED_SPEED" type="INTEGER" remarks="Speed (wounded) of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="WOUNDED_DICE_NAME" type="VARCHAR(30)" remarks="Defense dice (wounded) of the hero" />
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="EXPANSION" baseTableName="HERO" constraintName="FK_HERO_EXPANSION"
+      deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="EXPANSION" />
+    <addForeignKeyConstraint baseColumnNames="DICE_NAME" baseTableName="HERO" constraintName="FK_HERO_DICE"
+      deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE" />
+    <addForeignKeyConstraint baseColumnNames="WOUNDED_DICE_NAME" baseTableName="HERO"
+      constraintName="FK_HERO_WOUNDED_DICE" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="DICE" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-hero_ability-1">
+    <createTable tableName="HERO_ABILITY">
+      <column name="NAME" type="VARCHAR(30)" remarks="Name of the ability">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="HERO_ABILITY_PK" />
+      </column>
+      <column name="MESSAGE_CODE" type="VARCHAR(40)" remarks="Message code of the ability">
+        <constraints nullable="false" />
+      </column>
+      <column name="ABILITY_CODE" type="VARCHAR(45)" remarks="Description code of the ability">
+        <constraints nullable="false" />
+      </column>
+      <column name="ACTION" type="INT" remarks="Action count of the ability" />
+      <column name="STRAIN" type="INT" remarks="Strain count of the ability" />
+      <column name="HERO_NAME" type="VARCHAR(30)" remarks="Name of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="WOUNDED" type="BOOLEAN" remarks="Indicator present if wounded of the ability ">
+        <constraints nullable="false" />
+      </column>
+      <column name="VERSION" type="INT" remarks="Version control" defaultValue="0" >
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="HERO_NAME" baseTableName="HERO_ABILITY"
+      constraintName="FK_HERO_ABILITY_HERO" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="HERO" />
+  </changeSet>
+  <changeSet author="RAF" id="table-imperial-hero_attribut-1">
+    <createTable tableName="HERO_ATTRIBUT">
+      <column name="HERO_NAME" type="VARCHAR(30)" remarks="Name of the hero">
+        <constraints nullable="false" />
+      </column>
+      <column name="ATTRIBUT" type="VARCHAR(30)" remarks="Name of the attribut">
+        <constraints nullable="false" />
+      </column>
+      <column name="WOUNDED" type="BOOLEAN" remarks="Indicator wounded of the attribut">
+        <constraints nullable="false" />
+      </column>
+      <column name="RANK" type="INTEGER" remarks="Rank of the defense dice">
+        <constraints nullable="false" />
+      </column>
+      <column name="DICE_NAME" type="VARCHAR(30)" remarks="Name of the attribut dice">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+    <addForeignKeyConstraint baseColumnNames="HERO_NAME" baseTableName="HERO_ATTRIBUT"
+      constraintName="FK_HERO_ATTRIBUT_HERO" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="HERO" />
+    <addForeignKeyConstraint baseColumnNames="DICE_NAME" baseTableName="HERO_ATTRIBUT"
+      constraintName="FK_HERO_ATTRIBUT_DICE" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="DICE" />
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-hero-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/hero.csv"
+      separator="|" tableName="HERO">
+      <column name="HEALTH" type="NUMERIC" />
+      <column name="ENDURANCE" type="NUMERIC" />
+      <column name="SPEED" type="NUMERIC" />
+      <column name="WOUNDED_HEALTH" type="NUMERIC" />
+      <column name="WOUNDED_ENDURANCE" type="NUMERIC" />
+      <column name="WOUNDED_SPEED" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-hero_ability-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/hero_ability.csv"
+      separator="|" tableName="HERO_ABILITY">
+      <column name="ACTION" type="NUMERIC" />
+      <column name="STRAIN" type="NUMERIC" />
+      <column name="WOUNDED" type="BOOLEAN" />
+    </loadData>
+  </changeSet>
+  <changeSet author="RAF" id="load-imperial-hero_attribut-1">
+    <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/hero_attribut.csv"
+      separator="|" tableName="HERO_ATTRIBUT">
+      <column name="WOUNDED" type="BOOLEAN" />
+      <column name="RANK" type="NUMERIC" />
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>

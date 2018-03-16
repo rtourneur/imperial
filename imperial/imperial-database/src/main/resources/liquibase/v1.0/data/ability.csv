@@ -89,3 +89,20 @@ Slippery|ability.slippery|ability.slippery.code|null|null
 Improved Smuggler's Instincts|ability.improved-smugglers-instincts|ability.improved-smugglers-instincts.code|null|null
 Trample|ability.trample|ability.trample.code|1|null
 Stampede|ability.stampede|ability.stampede.code|null|null
+Activate Agent|ability.activate-agent|ability.activate-agent.code|1|null
+Menace|ability.menace|ability.menace.code|null|1
+Adapt|ability.adapt|ability.adapt.code|null|null
+Interrogate|ability.interrogate|ability.interrogate.code|null|1
+Spot Weld|ability.spot-weld|ability.spot-weld.code|1|null
+Scrap Battle|ability.scrap-battle|ability.scrap-battle.code|null|null
+Overclock|ability.overclock|ability.overclock.code|1|null
+Keep the Peace|ability.keep-the-peace|ability.keep-the-peace.code|null|null
+Indiscriminate Fire|ability.indiscriminate-fire|ability.indiscriminate-fire.code|1|null
+Regenerate|ability.regenerate|ability.regenerate.code|null|null
+Stealthy|ability.stealthy|ability.stealthy.code|null|null
+Cut and Run|ability.cut-and-run|ability.cut-and-run.code|null|null
+Fell Swoop|ability.fell-swoop|ability.fell-swoop.code|null|2
+False Orders|ability.false-orders|ability.false-orders.code|1|null
+Field Report|ability.field-report|ability.field-report.code|null|null
+Resourceful|ability.resourceful|ability.resourceful.code|null|null
+Gambit|ability.gambit|ability.gambit.code|null|null

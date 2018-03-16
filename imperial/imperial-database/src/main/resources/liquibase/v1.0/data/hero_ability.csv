@@ -1,0 +1,44 @@
+NAME|MESSAGE_CODE|ABILITY_CODE|ACTION|STRAIN|HERO_NAME|WOUNDED
+Precise Strike|hero.ability.precise-strike|hero.ability.precise-strike.code|null|2|Diala Passil|false
+Foresight|hero.ability.foresight|hero.ability.foresight.code|null|1|Diala Passil|true
+Havoc Shot|hero.ability.havoc-shot|hero.ability.havoc-shot.code|null|1|Fenn Signis|true
+Lone Wolf|hero.ability.lone-wolf|hero.ability.lone-wolf.code|null|null|Fenn Signis|false
+Charge|hero.ability.charge|hero.ability.charge.code|1|2|Gaarkhan|true
+Rage|hero.ability.rage|hero.ability.rage.code|null|null|Gaarkhan|false
+Command|hero.ability.command|hero.ability.command.code|1|2|Gideon Argus|true
+Disabling Shot|hero.ability.disabling-shot|hero.ability.disabling-shot.code|null|null|Gideon Argus|false
+Quick Draw|hero.ability.quick-draw|hero.ability.quick-draw.code|null|2|Jyn Odan|true
+Opportunist|hero.ability.opportunist|hero.ability.opportunist.code|null|null|Jyn Odan|false
+Ambush|hero.ability.ambush|hero.ability.ambush.code|null|1|Mak Eshka'rey|true
+Covert|hero.ability.covert|hero.ability.covert.code|null|null|Mak Eshka'rey|false
+Close and Personal|hero.ability.close-and-personal|hero.ability.close-and-personal.code|1|2|Biv Bodhrik|true
+Deadly Precision|hero.ability.deadly-precision|hero.ability.deadly-precision.code|null|1|Biv Bodhrik|false
+Battle Technician|hero.ability.battle-technician|hero.ability.battle-technician.code|null|1|Saska Teft|true
+Practical Solutions|hero.ability.practical-solutions|hero.ability.practical-solutions.code|null|null|Saska Teft|true
+Saska-3|hero.ability.saska-3|hero.ability.saska-3.code|null|null|Saska Teft|false
+Set Your Sights|hero.ability.set-your-sights|hero.ability.set-your-sights.code|null|2|Loku Kanoloa|true
+Loku-2|hero.ability.loku-2|hero.ability.loku-2.code|null|null|Loku Kanoloa|true
+Clear-Minded|hero.ability.clear-minded|hero.ability.clear-minded.code|null|null|Loku Kanoloa|false
+Medical Loadout|hero.ability.medical-loadout|hero.ability.medical-loadout.code|1|1|MHD-19|true
+Mechanical|hero.ability.mechanical|hero.ability.mechanical.code|null|null|MHD-19|true
+Ready for Service|hero.ability.ready-for-service|hero.ability.ready-for-service.code|null|null|MHD-19|false
+Close Quarters|hero.ability.close-quarters|hero.ability.close-quarters.code|null|2|Verena Talos|true
+Duck and Weave|hero.ability.duck-and-weave|hero.ability.duck-and-weave.code|null|null|Verena Talos|false
+Cloak & Dagger|hero.ability.cloak-&-dagger|hero.ability.cloak-&-dagger.code|null|null|Davith Elso|true
+Force Speed|hero.ability.force-speed|hero.ability.force-speed.code|null|1|Davith Elso|false
+False Orders|hero.ability.false-orders|hero.ability.false-orders.code|1|1|Murne Rin|true
+Figurehead|hero.ability.figurehead|hero.ability.figurehead.code|null|null|Murne Rin|false
+Rush|hero.ability.rush|hero.ability.rush.code|null|null|Onar Koma|true
+Power Through|hero.ability.power-through|hero.ability.power-through.code|null|null|Onar Koma|true
+Onar-3|hero.ability.onar-3|hero.ability.onar-3.code|null|null|Onar Koma|false
+Onar-4|hero.ability.onar-4|hero.ability.onar-4.code|null|null|Onar Koma|false
+Mandalorian Whip|hero.ability.mandalorian-whip|hero.ability.mandalorian-whip.code|1|1|Shyla Varad|true
+Respite|hero.ability.respite|hero.ability.respite.code|null|null|Shyla Varad|false
+Boltslinger|hero.ability.boltslinger|hero.ability.boltslinger.code|null|null|Vinto Hreeda|true
+Thread the Needle|hero.ability.thread-the-needle|hero.ability.thread-the-needle.code|null|1|Vinto Hreeda|false
+Demolish|hero.ability.demolish|hero.ability.demolish.code|null|2|Drokkatta|true
+Dispersal Shot|hero.ability.dispersal-shot|hero.ability.dispersal-shot.code|null|null|Drokkatta|false
+Droid Mastery|hero.ability.droid-mastery|hero.ability.droid-mastery.code|null|2|Jarrod Kelvin|true
+Parry|hero.ability.parry|hero.ability.parry.code|null|null|Jarrod Kelvin|false
+Arms Distribution|hero.ability.arms-distribution|hero.ability.arms-distribution.code|null|1|Ko-Tun Feralo|true
+Stockpile|hero.ability.stockpile|hero.ability.stockpile.code|null|null|Ko-Tun Feralo|false

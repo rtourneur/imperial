@@ -1,6 +1,6 @@
 ID|NAME|NAME_CODE|TITLE_CODE|ELITE|UNIQUENESS|MODE|FACTION|COUNT|COST|REINFORCE|SIZE|HEALTH|SPEED|ATTACK_TYPE
 1|Stormtrooper|deployment.stomtrooper|null|false|false|all|Imperial|3|6|2|Small|3|4|Ranged
-2|Stormtrooper|deployment.stomtrooper|null|true|false|all|Imperial|5|9|3|Small|5|4|Ranged
+2|Stormtrooper|deployment.stomtrooper|null|true|false|all|Imperial|3|9|3|Small|5|4|Ranged
 3|Imperial Officer|deployment.imperial-officer|null|false|false|all|Imperial|1|2|null|Small|3|4|Ranged
 4|Imperial Officer|deployment.imperial-officer|null|true|false|all|Imperial|1|5|null|Small|5|4|Ranged
 5|E-Web Engineer|deployment.e-web-engineer|null|false|false|all|Imperial|1|6|null|Medium|5|2|Ranged
@@ -65,3 +65,13 @@ ID|NAME|NAME_CODE|TITLE_CODE|ELITE|UNIQUENESS|MODE|FACTION|COUNT|COST|REINFORCE|
 64|Alliance Smuggler|deployment.alliance-smuggler|null|false|false|all|Rebel|1|2|null|Small|3|4|Ranged
 65|Alliance Smuggler|deployment.alliance-smuggler|null|true|false|all|Rebel|1|4|null|Small|5|5|Ranged
 66|Bantha Rider|deployment.bantha-rider|null|true|false|all|Mercenary|1|9|null|Massive|21|5|Ranged
+67|Agent Blaise|deployment.agent-blaise|deployment.agent-blaise.title|true|true|campagn|Imperial|1|6|null|Small|8|4|Ranged
+68|Agent Blaise|deployment.agent-blaise|deployment.agent-blaise.title|true|true|skirmish|Imperial|1|6|null|Small|8|4|Ranged
+69|Ugnaught Tinkerer|deployment.ugnaught-tinkerer|null|false|false|all|Mercenary|1|3|null|Small|4|4|Ranged
+70|Ugnaught Tinkerer|deployment.ugnaught-tinkerer|null|true|false|all|Mercenary|1|5|null|Small|7|4|Ranged
+71|Wing Guard|deployment.wing-guard|null|false|false|all|Mercenary|3|6|2|Small|3|4|Ranged
+72|Wing Guard|deployment.wing-guard|null|true|false|all|Mercenary|3|9|3|Small|5|4|Ranged
+73|Bossk|deployment.bossk|deployment.bossk.title|true|true|all|Mercenary|1|8|null|Small|10|4|Ranged
+74|Davith Elso|deployment.davith-elso|null|false|true|skirmish|Rebel|1|6|null|Small|10|5|Melee
+75|Murne Rin|deployment.murne-rin|null|false|true|skirmish|Rebel|1|4|null|Small|6|4|Ranged
+76|Lando Calrissian|deployment.lando-calrissian|deployment.lando-calrissian.title|true|true|all|Rebel|1|6|null|Small|8|4|Ranged

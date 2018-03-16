@@ -7,27 +7,27 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * Enum for Attack types.
+ * Enum for Attributs.
  *
  * @author RAF
  */
 @Getter
 @RequiredArgsConstructor
-public enum AttackTypeEnum {
+public enum AttributEnum {
   /** Melee. */
-  MELEE("Melee"),
+  STRENGTH("Strength"),
   /** Ranged. */
-  RANGED("Ranged"),
+  INSIGHT("Insight"),
   /** None. */
-  NONE("None");
+  TECH("Tech");
 
   /**
    * Map for enum conversion.
    */
-  private static final Map<String, AttackTypeEnum> ATTACK_TYPES = new HashMap<>(AttackTypeEnum.values().length);
+  private static final Map<String, AttributEnum> ATTRIBUTS = new HashMap<>(AttributEnum.values().length);
   static {
-    for (final AttackTypeEnum attackTypeEnum : AttackTypeEnum.values()) {
-      ATTACK_TYPES.put(attackTypeEnum.code, attackTypeEnum);
+    for (final AttributEnum attributEnum : AttributEnum.values()) {
+      ATTRIBUTS.put(attributEnum.code, attributEnum);
     }
   }
 
@@ -41,8 +41,8 @@ public enum AttackTypeEnum {
    *          Code of the enum
    * @return the enum.
    */
-  public static AttackTypeEnum get(final String code) {
-    return ATTACK_TYPES.get(code);
+  public static AttributEnum get(final String code) {
+    return ATTRIBUTS.get(code);
   }
 
 }

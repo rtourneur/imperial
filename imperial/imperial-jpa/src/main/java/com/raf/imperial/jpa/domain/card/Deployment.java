@@ -2,6 +2,10 @@ package com.raf.imperial.jpa.domain.card;
 
 import java.util.List;
 
+import javax.persistence.AssociationOverride;
+import javax.persistence.AssociationOverrides;
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.Convert;
@@ -110,8 +114,10 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
   /** The capacities. */
   @ElementCollection
   @CollectionTable(name = "DEPLOYMENT_CAPACITY", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "DEPLOYMENT_ID") }, indexes = {
+      @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_CAPACITY_DEPLOYMENT")) }, indexes = {
           @Index(name = "IDX_DEPLOYMENT_CAPACITY", columnList = "DEPLOYMENT_ID, RANK", unique = true) })
+  @AssociationOverrides({ @AssociationOverride(name = "capacity", joinColumns = {
+      @JoinColumn(name = "CAPACITY_ID", referencedColumnName = "ID", nullable = false, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_CAPACITY_CAPACITY")) }) })
   @OrderBy("rank")
   private List<EmbedCapacity> capacities;
 
@@ -133,8 +139,10 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
   /** The defense pool dices. */
   @ElementCollection
   @CollectionTable(name = "DEPLOYMENT_DEFENSE", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "DEPLOYMENT_ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_DEFENSE_DEPLOYMENT")) }, indexes = {
+      @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_DEFENSE_DEPLOYMENT")) }, indexes = {
           @Index(name = "IDX_DEPLOYMENT_DEFENSE", columnList = "DEPLOYMENT_ID, RANK", unique = true) })
+  @AssociationOverrides({ @AssociationOverride(name = "dice", joinColumns = {
+      @JoinColumn(name = "DICE_NAME", referencedColumnName = "NAME", nullable = false, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_DEFENSE_DICE")) }) })
   private List<EmbedDice> defenses;
 
   /** The attack type. */
@@ -145,8 +153,10 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
   /** The attack pool dices. */
   @ElementCollection
   @CollectionTable(name = "DEPLOYMENT_ATTACK", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "DEPLOYMENT_ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_ATTACK_DEPLOYMENT")) }, indexes = {
+      @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_ATTACK_DEPLOYMENT")) }, indexes = {
           @Index(name = "IDX_DEPLOYMENT_ATTACK", columnList = "DEPLOYMENT_ID, RANK", unique = true) })
+  @AssociationOverrides({ @AssociationOverride(name = "dice", joinColumns = {
+      @JoinColumn(name = "DICE_NAME", referencedColumnName = "NAME", nullable = false, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_ATTACK_DICE")) }) })
   private List<EmbedDice> attacks;
 
   /**

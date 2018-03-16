@@ -13,4 +13,5 @@
   <include file="liquibase/v1.0/def/dice.xml" />
   <include file="liquibase/v1.0/def/deployment.xml" />
   <include file="liquibase/v1.0/def/item.xml" />
+  <include file="liquibase/v1.0/def/hero.xml" />
 </databaseChangeLog>

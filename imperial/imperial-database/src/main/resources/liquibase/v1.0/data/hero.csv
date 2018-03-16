@@ -1,0 +1,20 @@
+NAME|MESSAGE_CODE|TITLE_CODE|EXPANSION|HEALTH|ENDURANCE|SPEED|DICE_NAME|WOUNDED_HEALTH|WOUNDED_ENDURANCE|WOUNDED_SPEED|WOUNDED_DICE_NAME
+Diala Passil|hero.diala-passil|hero.diala-passil.title|Imperial Assault|12|5|4|White|12|4|3|White
+Fenn Signis|hero.fenn-signis|hero.fenn-signis.title|Imperial Assault|12|4|4|Black|12|3|3|Black
+Gaarkhan|hero.gaarkhan|hero.gaarkhan.title|Imperial Assault|14|4|4|Black|14|3|3|Black
+Gideon Argus|hero.gideon-argus|hero.gideon-argus.title|Imperial Assault|10|5|4|Black|10|4|3|Black
+Jyn Odan|hero.jyn-odan|hero.jyn-odan.title|Imperial Assault|10|4|5|White|10|3|4|White
+Mak Eshka'rey|hero.mak-eshkarey|hero.mak-eshkarey.title|Imperial Assault|10|5|4|White|10|4|3|White
+Biv Bodhrik|hero.biv-bodhrik|hero.biv-bodhrik.title|Twin Shadows|13|4|4|Black|13|3|3|Black
+Saska Teft|hero.saska-teft|hero.saska-teft.title|Twin Shadows|11|4|5|White|11|3|4|White
+Loku Kanoloa|hero.loku-kanoloa|hero.loku-kanoloa.title|Return to Hoth|10|5|5|White|10|4|4|White
+MHD-19|hero.mhd-19|hero.mhd-19.title|Return to Hoth|12|4|4|Black|12|3|3|Black
+Verena Talos|hero.verena-talos|hero.verena-talos.title|Return to Hoth|12|5|4|Black|12|4|3|Black
+Davith Elso|hero.davith-elso|hero.davith-elso.title|The Bespin Gambit|11|4|4|White|11|3|3|White
+Murne Rin|hero.murne-rin|hero.murne-rin.title|The Bespin Gambit|12|4|4|Black|12|3|3|Black
+Onar Koma|hero.onar-koma|hero.onar-koma.title|Jabba's Realm|20|4|4|null|20|3|3|null
+Shyla Varad|hero.shyla-varad|hero.shyla-varad.title|Jabba's Realm|12|4|5|Black|12|3|4|Black
+Vinto Hreeda|hero.vinto-hreeda|hero.vinto-hreeda.title|Jabba's Realm|11|4|4|White|11|3|3|White
+Drokkatta|hero.drokkatta|hero.drokkatta.title|Heart of the Empire|13|4|4|Black|13|3|3|Black
+Jarrod Kelvin|hero.jarrod-kelvin|hero.jarrod-kelvin.title|Heart of the Empire|10|5|4|Black|10|4|3|Black
+Ko-Tun Feralo|hero.ko-tun-feralo|hero.ko-tun-feralo.title|Heart of the Empire|12|4|4|Black|12|3|3|Black
