@@ -164,7 +164,7 @@ public class DeploymentDaoTest extends AbstractDaoTest {
     final Integer ident = Integer.valueOf(17);
     final Deployment deployment = this.deploymentDao.getById(ident);
     assertNotNull(deployment);
-    final List<Capacity> capacities = this.deploymentDao.getCapacities(deployment);
+    final List<Capacity> capacities = deployment.getCapacities();
     assertNotNull(capacities);
     assertFalse(capacities.isEmpty());
     assertEquals(Integer.valueOf(16), capacities.get(0).getIdentifier());
@@ -178,7 +178,7 @@ public class DeploymentDaoTest extends AbstractDaoTest {
     final Integer ident = Integer.valueOf(9);
     final Deployment deployment = this.deploymentDao.getById(ident);
     assertNotNull(deployment);
-    final List<Dice> dices = this.deploymentDao.getAttack(deployment);
+    final List<Dice> dices = deployment.getAttacks();
     assertNotNull(dices);
     assertEquals(3, dices.size());
     assertEquals("Blue", dices.get(0).getIdentifier());

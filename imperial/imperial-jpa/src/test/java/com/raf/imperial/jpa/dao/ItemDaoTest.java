@@ -157,7 +157,7 @@ public class ItemDaoTest extends AbstractDaoTest {
     final Integer ident = Integer.valueOf(17);
     final Item item = this.itemDao.getById(ident);
     assertNotNull(item);
-    final List<Capacity> capacities = this.itemDao.getCapacities(item);
+    final List<Capacity> capacities = item.getCapacities();
     assertNotNull(capacities);
     assertFalse(capacities.isEmpty());
     assertEquals(Integer.valueOf(17), capacities.get(0).getIdentifier());
@@ -171,7 +171,7 @@ public class ItemDaoTest extends AbstractDaoTest {
     final Integer ident = Integer.valueOf(28);
     final Item item = this.itemDao.getById(ident);
     assertNotNull(item);
-    final List<Dice> dices = this.itemDao.getAttack(item);
+    final List<Dice> dices = item.getAttacks();
     assertNotNull(dices);
     assertEquals(3, dices.size());
     assertEquals("Red", dices.get(0).getIdentifier());

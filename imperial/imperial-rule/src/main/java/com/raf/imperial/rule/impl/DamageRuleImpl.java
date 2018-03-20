@@ -142,7 +142,7 @@ public class DamageRuleImpl implements DamageRule {
       final boolean ranged = AttackTypeEnum.RANGED.equals(attackType);
       final List<Dice> dices = this.deploymentDao.getAttack(deployment, focus);
       replaceUndefinedDices(dices, deployment.getAbilities(), focus);
-      final List<Capacity> capacities = this.deploymentDao.getCapacities(deployment);
+      final List<Capacity> capacities = deployment.getCapacities();
       damages = getDamages(dices, capacities, ranged, accuracy);
     }
     return damages;
@@ -222,7 +222,7 @@ public class DamageRuleImpl implements DamageRule {
     } else {
       final boolean ranged = AttackTypeEnum.RANGED.equals(attackType);
       final List<Dice> dices = this.itemDao.getAttack(item, focus);
-      final List<Capacity> capacities = this.itemDao.getCapacities(item);
+      final List<Capacity> capacities = item.getCapacities();
       damages = getDamages(dices, capacities, ranged, accuracy);
     }
     return damages;

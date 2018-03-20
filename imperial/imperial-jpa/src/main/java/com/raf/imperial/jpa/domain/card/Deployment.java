@@ -1,11 +1,8 @@
 package com.raf.imperial.jpa.domain.card;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.AssociationOverride;
-import javax.persistence.AssociationOverrides;
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.Convert;
@@ -13,18 +10,22 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
-import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OrderBy;
+import javax.persistence.PostLoad;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.raf.fwk.jpa.domain.AbstractIdEntity;
 import com.raf.imperial.jpa.domain.model.Ability;
+import com.raf.imperial.jpa.domain.model.Capacity;
+import com.raf.imperial.jpa.domain.model.Dice;
 import com.raf.imperial.jpa.domain.model.Faction;
 import com.raf.imperial.jpa.domain.model.Trait;
 import com.raf.imperial.jpa.enums.AttackTypeConverter;
@@ -111,15 +112,18 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
   @Column(name = "SIZE", nullable = false, length = 8)
   private SizeEnum size;
 
-  /** The capacities. */
+  /** The embedded capacities. */
   @ElementCollection
   @CollectionTable(name = "DEPLOYMENT_CAPACITY", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_CAPACITY_DEPLOYMENT")) }, indexes = {
-          @Index(name = "IDX_DEPLOYMENT_CAPACITY", columnList = "DEPLOYMENT_ID, RANK", unique = true) })
-  @AssociationOverrides({ @AssociationOverride(name = "capacity", joinColumns = {
-      @JoinColumn(name = "CAPACITY_ID", referencedColumnName = "ID", nullable = false, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_CAPACITY_CAPACITY")) }) })
+      @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID") }, uniqueConstraints = {
+          @UniqueConstraint(name = "IDX_DEPLOYMENT_CAPACITY", columnNames = { "DEPLOYMENT_ID",
+              "RANK" }) }, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_CAPACITY_DEPLOYMENT"))
   @OrderBy("rank")
-  private List<EmbedCapacity> capacities;
+  private List<EmbedCapacity> embedCapacities;
+
+  /** The capacities. */
+  @Transient
+  private List<Capacity> capacities;
 
   /** The abilities. */
   @ManyToMany
@@ -136,28 +140,53 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
   @Column(name = "SPEED", nullable = false, precision = 1)
   private int speed;
 
-  /** The defense pool dices. */
+  /** The embedded defense pool dices. */
   @ElementCollection
   @CollectionTable(name = "DEPLOYMENT_DEFENSE", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_DEFENSE_DEPLOYMENT")) }, indexes = {
-          @Index(name = "IDX_DEPLOYMENT_DEFENSE", columnList = "DEPLOYMENT_ID, RANK", unique = true) })
-  @AssociationOverrides({ @AssociationOverride(name = "dice", joinColumns = {
-      @JoinColumn(name = "DICE_NAME", referencedColumnName = "NAME", nullable = false, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_DEFENSE_DICE")) }) })
-  private List<EmbedDice> defenses;
+      @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID") }, uniqueConstraints = {
+          @UniqueConstraint(name = "IDX_DEPLOYMENT_DEFENSE", columnNames = { "DEPLOYMENT_ID",
+              "RANK" }) }, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_DEFENSE_DEPLOYMENT"))
+  private List<EmbedDice> embedDefenses;
+
+  /** The defense pool dices. */
+  @Transient
+  private List<Dice> defenses;
 
   /** The attack type. */
   @Convert(converter = AttackTypeConverter.class)
   @Column(name = "ATTACK_TYPE", nullable = false, length = 6)
   private AttackTypeEnum attackType;
 
-  /** The attack pool dices. */
+  /** The embedded attack pool dices. */
   @ElementCollection
   @CollectionTable(name = "DEPLOYMENT_ATTACK", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_ATTACK_DEPLOYMENT")) }, indexes = {
-          @Index(name = "IDX_DEPLOYMENT_ATTACK", columnList = "DEPLOYMENT_ID, RANK", unique = true) })
-  @AssociationOverrides({ @AssociationOverride(name = "dice", joinColumns = {
-      @JoinColumn(name = "DICE_NAME", referencedColumnName = "NAME", nullable = false, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_ATTACK_DICE")) }) })
-  private List<EmbedDice> attacks;
+      @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID") }, uniqueConstraints = {
+          @UniqueConstraint(name = "IDX_DEPLOYMENT_ATTACK", columnNames = { "DEPLOYMENT_ID",
+              "RANK" }) }, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_ATTACK_DEPLOYMENT"))
+  private List<EmbedDice> embedAttacks;
+
+  /** The attack pool dices. */
+  @Transient
+  private List<Dice> attacks;
+
+  /**
+   * Build the lists.
+   */
+  @PostLoad
+  public void postLoad() {
+    this.capacities = new ArrayList<>(this.embedCapacities.size());
+    for (final EmbedCapacity embedCapacity : this.embedCapacities) {
+      this.capacities.add(embedCapacity.getCapacity());
+    }
+    this.defenses = new ArrayList<>(this.embedDefenses.size());
+    for (final EmbedDice embedDice : this.embedDefenses) {
+      this.defenses.add(embedDice.getDice());
+    }
+    this.attacks = new ArrayList<>(this.embedAttacks.size());
+    for (final EmbedDice embedDice : this.embedAttacks) {
+      this.attacks.add(embedDice.getDice());
+    }
+  }
 
   /**
    * Append the properties for the to string builder.

@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.raf.fwk.jpa.dao.EntityIdDao;
 import com.raf.imperial.jpa.domain.card.Deployment;
-import com.raf.imperial.jpa.domain.model.Capacity;
 import com.raf.imperial.jpa.domain.model.Dice;
 import com.raf.imperial.jpa.domain.model.Faction;
 
@@ -32,24 +31,6 @@ public interface DeploymentDao extends EntityIdDao<Deployment> {
    * @return the list of deployment cards
    */
   List<Deployment> getSkirmish(Faction faction);
-
-  /**
-   * Return the list of capacities for a deployment card.
-   * 
-   * @param deployment
-   *          the deployment card
-   * @return the list of capacities
-   */
-  List<Capacity> getCapacities(Deployment deployment);
-
-  /**
-   * Return the list of attack dices for a deployment card.
-   * 
-   * @param deployment
-   *          the deployment card
-   * @return the list of dices
-   */
-  List<Dice> getAttack(Deployment deployment);
 
   /**
    * Return the list of attack dices for a deployment card.

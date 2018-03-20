@@ -17,9 +17,6 @@ import com.raf.fwk.jpa.dao.AbstractIdDao;
 import com.raf.imperial.jpa.dao.DeploymentDao;
 import com.raf.imperial.jpa.dao.DiceDao;
 import com.raf.imperial.jpa.domain.card.Deployment;
-import com.raf.imperial.jpa.domain.card.EmbedCapacity;
-import com.raf.imperial.jpa.domain.card.EmbedDice;
-import com.raf.imperial.jpa.domain.model.Capacity;
 import com.raf.imperial.jpa.domain.model.Dice;
 import com.raf.imperial.jpa.domain.model.Faction;
 import com.raf.imperial.jpa.enums.ModeEnum;
@@ -90,37 +87,6 @@ public final class DeploymentDaoImpl extends AbstractIdDao<Deployment> implement
   }
 
   /**
-   * Return the list of capacities for a deployment card.
-   * 
-   * @param deployment
-   *          the deployment card
-   * @return the list of capacities
-   * @see DeploymentDao#getCapacities(Deployment)
-   */
-  @Override
-  public List<Capacity> getCapacities(final Deployment deployment) {
-    final List<EmbedCapacity> deploymentCaps = deployment.getCapacities();
-    final List<Capacity> capacities = new ArrayList<>(deploymentCaps.size());
-    for (final EmbedCapacity capacity : deploymentCaps) {
-      capacities.add(capacity.getCapacity());
-    }
-    return capacities;
-  }
-
-  /**
-   * Return the list of attack dices for a deployment card.
-   * 
-   * @param deployment
-   *          the deployment card
-   * @return the list of dices
-   * @see DeploymentDao#getAttack(Deployment)
-   */
-  @Override
-  public List<Dice> getAttack(final Deployment deployment) {
-    return getAttack(deployment, false);
-  }
-
-  /**
    * Return the list of attack dices for a deployment card.
    * 
    * @param deployment
@@ -132,7 +98,7 @@ public final class DeploymentDaoImpl extends AbstractIdDao<Deployment> implement
    */
   @Override
   public List<Dice> getAttack(final Deployment deployment, final boolean focus) {
-    final List<EmbedDice> deploymentDices = deployment.getAttacks();
+    final List<Dice> deploymentDices = deployment.getAttacks();
     final int size;
     if (focus) {
       size = deploymentDices.size() + 1;
@@ -140,8 +106,8 @@ public final class DeploymentDaoImpl extends AbstractIdDao<Deployment> implement
       size = deploymentDices.size();
     }
     final List<Dice> dices = new ArrayList<>(size);
-    for (final EmbedDice dice : deploymentDices) {
-      dices.add(dice.getDice());
+    for (final Dice dice : deploymentDices) {
+      dices.add(dice);
     }
     if (focus) {
       dices.add(this.diceDao.getById("Green"));

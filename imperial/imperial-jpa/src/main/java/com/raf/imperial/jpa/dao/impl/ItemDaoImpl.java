@@ -16,10 +16,7 @@ import com.raf.fwk.jpa.dao.AbstractDao;
 import com.raf.fwk.jpa.dao.AbstractIdDao;
 import com.raf.imperial.jpa.dao.DiceDao;
 import com.raf.imperial.jpa.dao.ItemDao;
-import com.raf.imperial.jpa.domain.card.EmbedCapacity;
-import com.raf.imperial.jpa.domain.card.EmbedDice;
 import com.raf.imperial.jpa.domain.card.Item;
-import com.raf.imperial.jpa.domain.model.Capacity;
 import com.raf.imperial.jpa.domain.model.Dice;
 import com.raf.imperial.jpa.enums.ItemCategoryEnum;
 import com.raf.imperial.jpa.enums.ItemTypeEnum;
@@ -68,37 +65,6 @@ public final class ItemDaoImpl extends AbstractIdDao<Item> implements ItemDao {
   }
 
   /**
-   * Return the list of capacities for a item card.
-   * 
-   * @param item
-   *          the item card
-   * @return the list of capacities
-   * @see ItemDao#getCapacities(Item)
-   */
-  @Override
-  public List<Capacity> getCapacities(final Item item) {
-    final List<EmbedCapacity> itemCaps = item.getCapacities();
-    final List<Capacity> capacities = new ArrayList<>(itemCaps.size());
-    for (final EmbedCapacity capacity : itemCaps) {
-      capacities.add(capacity.getCapacity());
-    }
-    return capacities;
-  }
-
-  /**
-   * Return the list of attack dices for a item card.
-   * 
-   * @param item
-   *          the item card
-   * @return the list of dices
-   * @see ItemDao#getAttack(Item)
-   */
-  @Override
-  public List<Dice> getAttack(final Item item) {
-    return getAttack(item, false);
-  }
-
-  /**
    * Return the list of attack dices for a item card.
    * 
    * @param item
@@ -110,7 +76,7 @@ public final class ItemDaoImpl extends AbstractIdDao<Item> implements ItemDao {
    */
   @Override
   public List<Dice> getAttack(final Item item, final boolean focus) {
-    final List<EmbedDice> itemDices = item.getAttacks();
+    final List<Dice> itemDices = item.getAttacks();
     final int size;
     if (focus) {
       size = itemDices.size() + 1;
@@ -118,8 +84,8 @@ public final class ItemDaoImpl extends AbstractIdDao<Item> implements ItemDao {
       size = itemDices.size();
     }
     final List<Dice> dices = new ArrayList<>(size);
-    for (final EmbedDice dice : itemDices) {
-      dices.add(dice.getDice());
+    for (final Dice dice : itemDices) {
+      dices.add(dice);
     }
     if (focus) {
       dices.add(this.diceDao.getById("Green"));
