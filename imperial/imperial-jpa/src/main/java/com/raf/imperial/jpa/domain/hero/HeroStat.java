@@ -2,6 +2,8 @@ package com.raf.imperial.jpa.domain.hero;
 
 import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -20,7 +22,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class HeroStat {
+public class HeroStat implements Serializable {
+
+  /** Serial UID. */
+  private static final long serialVersionUID = -2754115856461487815L;
 
   /** The health. */
   @Column

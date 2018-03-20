@@ -36,10 +36,7 @@
       <column name="ICON" type="VARCHAR(30)" remarks="Icon of the dice side" />
     </createTable>
     <addForeignKeyConstraint baseColumnNames="DICE" baseTableName="DICE_SIDE" constraintName="FK_DICE_SIDE_DICE" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME" referencedTableName="DICE"/>
-    <createIndex schemaName="IMPERIAL" indexName="IDX_DICE_SIDE" tableName="DICE_SIDE" unique="true">
-      <column name="DICE" />
-      <column name="SIDE" />
-    </createIndex>
+    <addUniqueConstraint columnNames="DICE, SIDE" constraintName="IDX_DICE_SIDE" tableName="DICE_SIDE"/>
   </changeSet>
   <changeSet author="RAF" id="load-imperial-dice-1">
     <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/dice.csv" separator="|" tableName="DICE" />

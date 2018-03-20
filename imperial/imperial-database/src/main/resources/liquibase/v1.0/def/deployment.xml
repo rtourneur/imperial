@@ -99,12 +99,12 @@
         <constraints nullable="false" />
       </column>
     </createTable>
-    <addForeignKeyConstraint baseColumnNames="ABILITY_NAME" baseTableName="DEPLOYMENT_ABILITY"
-      constraintName="FK_DEPLOYMENT_ABILITY_ABILITY" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
-      referencedTableName="ABILITY" />
     <addForeignKeyConstraint baseColumnNames="DEPLOYMENT_ID" baseTableName="DEPLOYMENT_ABILITY"
       constraintName="FK_DEPLOYMENT_ABILITY_DEPLOYMENT" deferrable="false" initiallyDeferred="false"
       referencedColumnNames="ID" referencedTableName="DEPLOYMENT" />
+    <addForeignKeyConstraint baseColumnNames="ABILITY_NAME" baseTableName="DEPLOYMENT_ABILITY"
+      constraintName="FK_DEPLOYMENT_ABILITY_ABILITY" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
+      referencedTableName="ABILITY" />
   </changeSet>
   <changeSet author="RAF" id="table-imperial-deployment_defense-1">
     <createTable tableName="DEPLOYMENT_DEFENSE">

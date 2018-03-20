@@ -97,6 +97,7 @@
     <addForeignKeyConstraint baseColumnNames="DICE_NAME" baseTableName="HERO_ATTRIBUT"
       constraintName="FK_HERO_ATTRIBUT_DICE" deferrable="false" initiallyDeferred="false" referencedColumnNames="NAME"
       referencedTableName="DICE" />
+    <addUniqueConstraint columnNames="HERO_NAME, RANK, ATTRIBUT, WOUNDED" constraintName="IDX_HERO_HERO_ATTRIBUT" tableName="HERO_ATTRIBUT"/>
   </changeSet>
   <changeSet author="RAF" id="load-imperial-hero-1">
     <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/hero.csv"

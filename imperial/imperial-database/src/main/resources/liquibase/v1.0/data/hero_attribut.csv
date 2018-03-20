@@ -4,9 +4,9 @@ Biv Bodhrik|Insight|true|1|Red
 Biv Bodhrik|Strength|false|1|Blue
 Biv Bodhrik|Strength|false|2|Green
 Biv Bodhrik|Strength|false|3|Yellow
-Biv Bodhrik|Strength|false|1|Blue
-Biv Bodhrik|Strength|false|2|Red
-Biv Bodhrik|Strength|false|3|Green
+Biv Bodhrik|Strength|true|1|Blue
+Biv Bodhrik|Strength|true|2|Red
+Biv Bodhrik|Strength|true|3|Green
 Biv Bodhrik|Tech|false|1|Blue
 Biv Bodhrik|Tech|false|2|Green
 Biv Bodhrik|Tech|true|1|Blue
@@ -19,8 +19,8 @@ Davith Elso|Insight|true|2|Red
 Davith Elso|Insight|true|3|Green
 Davith Elso|Strength|false|1|Blue
 Davith Elso|Strength|false|2|Green
-Davith Elso|Strength|false|1|Blue
-Davith Elso|Strength|false|2|Red
+Davith Elso|Strength|true|1|Blue
+Davith Elso|Strength|true|2|Red
 Davith Elso|Tech|false|1|Blue
 Davith Elso|Tech|true|1|Red
 Diala Passil|Insight|false|1|Blue
@@ -42,9 +42,9 @@ Drokkatta|Insight|true|2|Red
 Drokkatta|Strength|false|1|Blue
 Drokkatta|Strength|false|2|Green
 Drokkatta|Strength|false|3|Green
-Drokkatta|Strength|false|1|Blue
-Drokkatta|Strength|false|2|Red
-Drokkatta|Strength|false|3|Green
+Drokkatta|Strength|true|1|Blue
+Drokkatta|Strength|true|2|Red
+Drokkatta|Strength|true|3|Green
 Drokkatta|Tech|false|1|Green
 Drokkatta|Tech|false|2|Green
 Drokkatta|Tech|true|1|Red
@@ -55,8 +55,8 @@ Fenn Signis|Insight|true|1|Blue
 Fenn Signis|Insight|true|2|Red
 Fenn Signis|Strength|false|1|Blue
 Fenn Signis|Strength|false|2|Green
-Fenn Signis|Strength|false|1|Blue
-Fenn Signis|Strength|false|2|Red
+Fenn Signis|Strength|true|1|Blue
+Fenn Signis|Strength|true|2|Red
 Fenn Signis|Tech|false|1|Blue
 Fenn Signis|Tech|false|2|Green
 Fenn Signis|Tech|true|1|Blue
@@ -66,9 +66,9 @@ Gaarkhan|Insight|true|1|Red
 Gaarkhan|Strength|false|1|Blue
 Gaarkhan|Strength|false|2|Green
 Gaarkhan|Strength|false|3|Yellow
-Gaarkhan|Strength|false|1|Blue
-Gaarkhan|Strength|false|2|Red
-Gaarkhan|Strength|false|3|Green
+Gaarkhan|Strength|true|1|Blue
+Gaarkhan|Strength|true|2|Red
+Gaarkhan|Strength|true|3|Green
 Gaarkhan|Tech|false|1|Blue
 Gaarkhan|Tech|false|2|Green
 Gaarkhan|Tech|true|1|Blue
@@ -81,8 +81,8 @@ Gideon Argus|Insight|true|2|Red
 Gideon Argus|Insight|true|3|Green
 Gideon Argus|Strength|false|1|Blue
 Gideon Argus|Strength|false|2|Green
-Gideon Argus|Strength|false|1|Blue
-Gideon Argus|Strength|false|2|Red
+Gideon Argus|Strength|true|1|Blue
+Gideon Argus|Strength|true|2|Red
 Gideon Argus|Tech|false|1|Blue
 Gideon Argus|Tech|false|2|Green
 Gideon Argus|Tech|true|1|Blue
@@ -93,8 +93,8 @@ Jarrod Kelvin|Insight|true|1|Blue
 Jarrod Kelvin|Insight|true|2|Red
 Jarrod Kelvin|Strength|false|1|Green
 Jarrod Kelvin|Strength|false|2|Green
-Jarrod Kelvin|Strength|false|1|Red
-Jarrod Kelvin|Strength|false|2|Green
+Jarrod Kelvin|Strength|true|1|Red
+Jarrod Kelvin|Strength|true|2|Green
 Jarrod Kelvin|Tech|false|1|Blue
 Jarrod Kelvin|Tech|false|2|Green
 Jarrod Kelvin|Tech|false|3|Yellow
@@ -106,7 +106,7 @@ Jyn Odan|Insight|false|2|Green
 Jyn Odan|Insight|true|1|Blue
 Jyn Odan|Insight|true|2|Red
 Jyn Odan|Strength|false|1|Blue
-Jyn Odan|Strength|false|1|Red
+Jyn Odan|Strength|true|1|Red
 Jyn Odan|Tech|false|1|Blue
 Jyn Odan|Tech|false|2|Green
 Jyn Odan|Tech|false|3|Yellow
@@ -120,7 +120,7 @@ Ko-Tun Feralo|Insight|true|1|Blue
 Ko-Tun Feralo|Insight|true|2|Red
 Ko-Tun Feralo|Insight|true|3|Green
 Ko-Tun Feralo|Strength|false|1|Blue
-Ko-Tun Feralo|Strength|false|1|Red
+Ko-Tun Feralo|Strength|true|1|Red
 Ko-Tun Feralo|Tech|false|1|Blue
 Ko-Tun Feralo|Tech|false|2|Green
 Ko-Tun Feralo|Tech|true|1|Blue
@@ -132,7 +132,7 @@ Loku Kanoloa|Insight|true|1|Blue
 Loku Kanoloa|Insight|true|2|Red
 Loku Kanoloa|Insight|true|3|Green
 Loku Kanoloa|Strength|false|1|Blue
-Loku Kanoloa|Strength|false|1|Red
+Loku Kanoloa|Strength|true|1|Red
 Loku Kanoloa|Tech|false|1|Blue
 Loku Kanoloa|Tech|true|1|Red
 Mak Eshka'rey|Insight|false|1|Blue
@@ -141,8 +141,8 @@ Mak Eshka'rey|Insight|true|1|Blue
 Mak Eshka'rey|Insight|true|2|Red
 Mak Eshka'rey|Strength|false|1|Blue
 Mak Eshka'rey|Strength|false|2|Green
-Mak Eshka'rey|Strength|false|1|Blue
-Mak Eshka'rey|Strength|false|2|Red
+Mak Eshka'rey|Strength|true|1|Blue
+Mak Eshka'rey|Strength|true|2|Red
 Mak Eshka'rey|Tech|false|1|Blue
 Mak Eshka'rey|Tech|false|2|Green
 Mak Eshka'rey|Tech|false|3|Yellow
@@ -154,7 +154,7 @@ MHD-19|Insight|false|2|Green
 MHD-19|Insight|true|1|Blue
 MHD-19|Insight|true|2|Red
 MHD-19|Strength|false|1|Blue
-MHD-19|Strength|false|1|Red
+MHD-19|Strength|true|1|Red
 MHD-19|Tech|false|1|Blue
 MHD-19|Tech|false|2|Green
 MHD-19|Tech|false|3|Yellow
@@ -168,7 +168,7 @@ Murne Rin|Insight|true|1|Blue
 Murne Rin|Insight|true|2|Red
 Murne Rin|Insight|true|3|Green
 Murne Rin|Strength|false|1|Blue
-Murne Rin|Strength|false|1|Red
+Murne Rin|Strength|true|1|Red
 Murne Rin|Tech|false|1|Blue
 Murne Rin|Tech|false|2|Green
 Murne Rin|Tech|true|1|Blue
@@ -180,9 +180,9 @@ Onar Koma|Insight|true|2|Green
 Onar Koma|Strength|false|1|Blue
 Onar Koma|Strength|false|2|Yellow
 Onar Koma|Strength|false|3|Yellow
-Onar Koma|Strength|false|1|Blue
-Onar Koma|Strength|false|2|Red
-Onar Koma|Strength|false|3|Yellow
+Onar Koma|Strength|true|1|Blue
+Onar Koma|Strength|true|2|Red
+Onar Koma|Strength|true|3|Yellow
 Onar Koma|Tech|false|1|Blue
 Onar Koma|Tech|false|2|Red
 Onar Koma|Tech|true|1|Red
@@ -192,7 +192,7 @@ Saska Teft|Insight|false|2|Green
 Saska Teft|Insight|true|1|Blue
 Saska Teft|Insight|true|2|Red
 Saska Teft|Strength|false|1|Blue
-Saska Teft|Strength|false|1|Red
+Saska Teft|Strength|true|1|Red
 Saska Teft|Tech|false|1|Blue
 Saska Teft|Tech|false|2|Green
 Saska Teft|Tech|false|3|Yellow
@@ -206,9 +206,9 @@ Shyla Varad|Insight|true|2|Green
 Shyla Varad|Strength|false|1|Blue
 Shyla Varad|Strength|false|2|Blue
 Shyla Varad|Strength|false|3|Green
-Shyla Varad|Strength|false|1|Blue
-Shyla Varad|Strength|false|2|Blue
-Shyla Varad|Strength|false|3|Red
+Shyla Varad|Strength|true|1|Blue
+Shyla Varad|Strength|true|2|Blue
+Shyla Varad|Strength|true|3|Red
 Shyla Varad|Tech|false|1|Blue
 Shyla Varad|Tech|false|2|Yellow
 Shyla Varad|Tech|true|1|Blue
@@ -219,8 +219,8 @@ Verena Talos|Insight|true|1|Blue
 Verena Talos|Insight|true|2|Red
 Verena Talos|Strength|false|1|Blue
 Verena Talos|Strength|false|2|Green
-Verena Talos|Strength|false|1|Blue
-Verena Talos|Strength|false|2|Red
+Verena Talos|Strength|true|1|Blue
+Verena Talos|Strength|true|2|Red
 Verena Talos|Tech|false|1|Blue
 Verena Talos|Tech|false|2|Green
 Verena Talos|Tech|true|1|Blue
@@ -232,7 +232,7 @@ Vinto Hreeda|Insight|true|1|Blue
 Vinto Hreeda|Insight|true|2|Red
 Vinto Hreeda|Insight|true|3|Green
 Vinto Hreeda|Strength|false|1|Green
-Vinto Hreeda|Strength|false|1|Red
+Vinto Hreeda|Strength|true|1|Red
 Vinto Hreeda|Tech|false|1|Red
 Vinto Hreeda|Tech|false|2|Yellow
 Vinto Hreeda|Tech|true|1|Red

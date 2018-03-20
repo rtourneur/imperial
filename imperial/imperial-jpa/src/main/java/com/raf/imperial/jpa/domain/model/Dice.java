@@ -8,11 +8,11 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
-import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -44,8 +44,9 @@ public class Dice extends AbstractNamedEntity {
   /** The dice sides. */
   @ElementCollection(fetch = FetchType.EAGER)
   @CollectionTable(name = "DICE_SIDE", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "DICE", foreignKey = @ForeignKey(name = "FK_DICE_SIDE_DICE")) }, indexes = {
-          @Index(name = "IDX_DICE_SIDE", columnList = "DICE, SIDE", unique = true) })
+      @JoinColumn(name = "DICE", referencedColumnName = "NAME") }, uniqueConstraints = {
+          @UniqueConstraint(name = "IDX_DICE_SIDE", columnNames = { "DICE",
+              "SIDE" }) }, foreignKey = @ForeignKey(name = "FK_DICE_SIDE_DICE"))
   @OrderBy("side")
   private List<DiceSide> diceSides;
 

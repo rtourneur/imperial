@@ -17,7 +17,7 @@
         <constraints nullable="false" />
       </column>
       <column name="RULE_CODE" type="VARCHAR(40)" remarks="Rule code of the item" />
-      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the item" >
+      <column name="EXPANSION" type="VARCHAR(30)" remarks="Expansion of the item">
         <constraints nullable="false" />
       </column>
       <column name="ITEM_CATEGORY" type="VARCHAR(6)" remarks="Category of the item">
@@ -26,7 +26,7 @@
       <column name="ITEM_TYPE" type="VARCHAR(12)" remarks="Type of the item">
         <constraints nullable="false" />
       </column>
-      <column name="ATTACK_TYPE" type="VARCHAR(6)" remarks="Attack type of the item'" >
+      <column name="ATTACK_TYPE" type="VARCHAR(6)" remarks="Attack type of the item'">
         <constraints nullable="false" />
       </column>
       <column name="MODIFICATIONS" type="INTEGER" remarks="Modification count of the item" />

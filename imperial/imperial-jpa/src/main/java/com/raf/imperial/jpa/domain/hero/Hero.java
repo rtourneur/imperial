@@ -21,6 +21,7 @@ import javax.persistence.OrderBy;
 import javax.persistence.PostLoad;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -92,7 +93,9 @@ public class Hero extends AbstractNamedEntity {
   /** The capacities. */
   @ElementCollection
   @CollectionTable(name = "HERO_ATTRIBUT", schema = "IMPERIAL", joinColumns = {
-      @JoinColumn(name = "HERO_NAME", referencedColumnName = "NAME", foreignKey = @ForeignKey(name = "FK_HERO_ATTRIBUT_HERO")) }, foreignKey = @ForeignKey(name = "FK_HERO_ATTRIBUT_HERO"))
+      @JoinColumn(name = "HERO_NAME", referencedColumnName = "NAME") }, uniqueConstraints = {
+          @UniqueConstraint(name = "IDX_HERO_HERO_ATTRIBUT", columnNames = { "HERO_NAME", "RANK", "ATTRIBUT",
+              "WOUNDED" }) }, foreignKey = @ForeignKey(name = "FK_HERO_ATTRIBUT_HERO"))
   @OrderBy("rank")
   private List<HeroAttribut> attributs;
 
@@ -108,7 +111,7 @@ public class Hero extends AbstractNamedEntity {
    * Build the map of attributes.
    */
   @PostLoad
-  public void buildAttributes() {
+  public void postLoad() {
     this.healthAttr = new HashMap<>();
     this.woundedAttr = new HashMap<>();
     Map<AttributEnum, List<Dice>> local;
