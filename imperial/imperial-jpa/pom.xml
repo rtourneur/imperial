@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.raf.imperial</groupId>
@@ -95,7 +96,7 @@
       <plugin>
         <groupId>org.liquibase</groupId>
         <artifactId>liquibase-maven-plugin</artifactId>
-        <version>3.5.3</version>
+        <version>3.5.5</version>
         <configuration>
           <propertyFile>src/test/resources/liquibase.properties</propertyFile>
           <url>jdbc:derby:${project.basedir}/../src/database/derby/imperial;create=true</url>
@@ -103,8 +104,13 @@
         <dependencies>
           <dependency>
             <groupId>org.liquibase.ext</groupId>
-            <artifactId>liquibase-hibernate4</artifactId>
+            <artifactId>liquibase-hibernate5</artifactId>
             <version>3.6</version>
+          </dependency>
+          <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
           </dependency>
           <dependency>
             <groupId>org.springframework</groupId>
