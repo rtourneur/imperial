@@ -6,7 +6,6 @@ import javax.persistence.MappedSuperclass;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import com.raf.fwk.jpa.domain.AbstractIdEntity;
 import com.raf.imperial.jpa.enums.AttackTypeConverter;
 import com.raf.imperial.jpa.enums.AttackTypeEnum;
 import com.raf.imperial.jpa.enums.ItemCategoryConverter;
@@ -28,26 +27,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class AbstractItem extends AbstractIdEntity {
+public abstract class AbstractItem extends AbstractCard {
 
   /** Serial UID. */
-  private static final long serialVersionUID = -8684264244155831090L;
-
-  /** The name. */
-  @Column(name = "NAME", length = 30, nullable = false)
-  private String name;
-
-  /** The name code. */
-  @Column(name = "NAME_CODE", length = 40, nullable = false)
-  private String nameCode;
-
-  /** The title code. */
-  @Column(name = "DESCRIPTION_CODE", length = 40, nullable = false)
-  private String descriptionCode;
-
-  /** The rule code. */
-  @Column(name = "RULE_CODE", length = 40)
-  private String ruleCode;
+  private static final long serialVersionUID = -8626597083810110862L;
 
   /** The Item Category type. */
   @Convert(converter = ItemCategoryConverter.class)
@@ -73,12 +56,11 @@ public abstract class AbstractItem extends AbstractIdEntity {
    * 
    * @param builder
    *          the builder
-   * @see AbstractIdEntity#appendId(ToStringBuilder)
+   * @see AbstractCard#appendCard(ToStringBuilder)
    */
   @Override
-  protected final void appendId(final ToStringBuilder builder) {
-    builder.append("name", this.name).append("nameCode", this.nameCode).append("descriptionCode", this.descriptionCode)
-        .append("ruleCode", this.ruleCode).append("itemCategory", this.itemCategory).append("itemType", this.itemType)
+  protected final void appendCard(final ToStringBuilder builder) {
+    builder.append("itemCategory", this.itemCategory).append("itemType", this.itemType)
         .append("attackType", this.attackType).append("modifications", this.modifications);
     appendItem(builder);
   }
