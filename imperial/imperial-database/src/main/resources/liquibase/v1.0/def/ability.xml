@@ -14,7 +14,7 @@
         <constraints nullable="false" />
       </column>
       <column name="ACTION" type="INT" remarks="Action count of the ability" />
-      <column name="SURGE" type="INT" remarks="Surge count of the ability" />
+      <column name="STRAIN" type="INT" remarks="Surge count of the ability" />
       <column name="VERSION" type="INT" remarks="Version control" defaultValue="0" >
         <constraints nullable="false" />
       </column>
@@ -23,7 +23,7 @@
   <changeSet author="RAF" id="load-imperial-ability-1">
     <loadData schemaName="IMPERIAL" relativeToChangelogFile="true" encoding="UTF-8" file="../data/ability.csv" separator="|" tableName="ABILITY" >
       <column name="ACTION" type="NUMERIC" />
-      <column name="SURGE" type="NUMERIC" />
+      <column name="STRAIN" type="NUMERIC" />
     </loadData>
   </changeSet>
 

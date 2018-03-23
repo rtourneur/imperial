@@ -1,4 +1,4 @@
-NAME|MESSAGE_CODE|ABILITY_CODE|ACTION|SURGE
+NAME|MESSAGE_CODE|ABILITY_CODE|ACTION|STRAIN
 ACP Scattergun|ability.acp-scattergun|ability.acp-scattergun.code|null|null
 Advanced Firepower|ability.advanced-firepower|ability.advanced-firepower.code|null|null
 Aggressive Negotiations|ability.aggressive-negotiations|ability.aggressive-negotiations.code|null|1
@@ -106,3 +106,11 @@ False Orders|ability.false-orders|ability.false-orders.code|1|null
 Field Report|ability.field-report|ability.field-report.code|null|null
 Resourceful|ability.resourceful|ability.resourceful.code|null|null
 Gambit|ability.gambit|ability.gambit.code|null|null
+Lightsaber Throw|ability.lightsaber-throw|ability.lightsaber-throw.code|1|null
+Deadly|ability.deadly|ability.deadly.code|null|1
+Defensive|ability.defensive|ability.defensive.code|null|null
+Slow on the Draw|ability.slow-on-the-draw|ability.slow-on-the-draw.code|null|null
+Use the Force|ability.use-the-force|ability.use-the-force.code|null|null
+Mind Trick|ability.mind-trick|ability.mind-trick.code|null|null
+Alter Mind|ability.alter-mind|ability.alter-mind.code|null|null
+Into the Force|ability.into-the-force|ability.into-the-force.code|null|null

@@ -25,9 +25,9 @@ public class Ability extends AbstractAbility {
   /** Serial UID. */
   private static final long serialVersionUID = 282372842190787939L;
 
-  /** The surge count. */
-  @Column(name = "SURGE", precision = 1)
-  private Integer surge;
+  /** The strain count. */
+  @Column(name = "STRAIN", precision = 1)
+  private Integer strain;
 
   /**
    * Append the properties for the to string builder.
@@ -38,7 +38,7 @@ public class Ability extends AbstractAbility {
    */
   @Override
   protected void appendAbility(final ToStringBuilder builder) {
-    builder.append("surge", this.surge);
+    builder.append("strain", this.strain);
   }
 
 }

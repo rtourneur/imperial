@@ -75,3 +75,7 @@ ID|NAME|NAME_CODE|TITLE_CODE|ELITE|UNIQUENESS|MODE|FACTION|COUNT|COST|REINFORCE|
 74|Davith Elso|deployment.davith-elso|null|false|true|skirmish|Rebel|1|6|null|Small|10|5|Melee
 75|Murne Rin|deployment.murne-rin|null|false|true|skirmish|Rebel|1|4|null|Small|6|4|Ranged
 76|Lando Calrissian|deployment.lando-calrissian|deployment.lando-calrissian.title|true|true|all|Rebel|1|6|null|Small|8|4|Ranged
+77|The Grand Inquisitor|deployment.the-grand-inquisitor|deployment.the-grand-inquisitor.title|true|true|all|Imperial|1|9|null|Small|15|5|Melee
+78|Greedo|deployment.greedo|deployment.greedo.title|true|true|all|Mercenary|1|4|null|Small|7|5|Ranged
+79|Obi-Wan Kenobi|deployment.obi-wan-kenobi|deployment.obi-wan-kenobi.title|true|true|campagn|Rebel|1|10|null|Small|12|4|Melee
+80|Obi-Wan Kenobi|deployment.obi-wan-kenobi|deployment.obi-wan-kenobi.title|true|true|skirmish|Rebel|1|10|null|Small|12|4|Melee
