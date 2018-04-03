@@ -228,7 +228,6 @@ public class DamageRuleImpl implements DamageRule {
     return damages;
   }
 
-
   /**
    * Calcul and returns the damages for an attack.
    * 
@@ -578,7 +577,8 @@ public class DamageRuleImpl implements DamageRule {
       int index = -1;
       int cursor = 0;
       for (final DamageValue surge : damages) {
-        if (surge.getSurge() <= surgeCount && surge.getDamage() > augment) {
+        if (surge.getSurge() <= surgeCount && surge.getDamage() > augment
+            && damage.getAccuracy() + surge.getAccuracy() >= accuracy) {
           augment = surge.getDamage();
           index = cursor;
         }
