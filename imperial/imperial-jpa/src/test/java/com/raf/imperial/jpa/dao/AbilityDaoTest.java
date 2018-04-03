@@ -38,7 +38,7 @@ public class AbilityDaoTest extends AbstractDaoTest {
     assertEquals("ability.aggressive-negotiations", ability.getMessageCode());
     assertEquals("ability.aggressive-negotiations.code", ability.getAbilityCode());
     assertNull(ability.getAction());
-    assertEquals(Integer.valueOf(1), ability.getStrain());
+    assertEquals(Integer.valueOf(1), ability.getSurge());
   }
 
   /**

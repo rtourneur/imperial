@@ -1,4 +1,4 @@
-NAME|MESSAGE_CODE|ABILITY_CODE|ACTION|STRAIN
+NAME|MESSAGE_CODE|ABILITY_CODE|ACTION|SURGE
 ACP Scattergun|ability.acp-scattergun|ability.acp-scattergun.code|null|null
 Advanced Firepower|ability.advanced-firepower|ability.advanced-firepower.code|null|null
 Aggressive Negotiations|ability.aggressive-negotiations|ability.aggressive-negotiations.code|null|1
