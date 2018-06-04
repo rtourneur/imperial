@@ -78,4 +78,20 @@ ID|NAME|NAME_CODE|TITLE_CODE|ELITE|UNIQUENESS|MODE|FACTION|COUNT|COST|REINFORCE|
 77|The Grand Inquisitor|deployment.the-grand-inquisitor|deployment.the-grand-inquisitor.title|true|true|all|Imperial|1|9|null|Small|15|5|Melee
 78|Greedo|deployment.greedo|deployment.greedo.title|true|true|all|Mercenary|1|4|null|Small|7|5|Ranged
 79|Obi-Wan Kenobi|deployment.obi-wan-kenobi|deployment.obi-wan-kenobi.title|true|true|campagn|Rebel|1|10|null|Small|12|4|Melee
-80|Obi-Wan Kenobi|deployment.obi-wan-kenobi|deployment.obi-wan-kenobi.title|true|true|skirmish|Rebel|1|10|null|Small|12|4|Melee
+80|Obi-Wan Kenobi|deployment.obi-wan-kenobi|deployment.obi-wan-kenobi.title|true|true|skirmish|Rebel|1|7|null|Small|12|4|Melee
+81|Jet Trooper|deployment.jet-trooper|null|false|false|all|Imperial|2|4|2|Small|3|4|Ranged
+82|Jet Trooper|deployment.jet-trooper|null|true|false|all|Imperial|2|7|4|Small|7|4|Ranged
+83|Captain Terro|deployment.captain-terro|deployment.captain-terro.title|true|true|all|Imperial|1|7|null|Medium|13|5|Ranged
+84|Onar Koma|deployment.onar-koma|null|false|true|skirmish|Mercenary|1|6|null|Small|15|4|Ranged
+85|Shyla Varad|deployment.shyla-varad|null|false|true|skirmish|Mercenary|1|8|null|Small|12|4|Melee
+86|Vinto Hreeda|deployment.vinto-hreeda|null|false|true|skirmish|Mercenary|1|5|null|Small|8|5|Ranged
+87|Luke Skywalker|deployment.luke-skywalker|deployment.luke-skywalker.title|true|true|all|Rebel|1|12|null|Small|16|4|Melee
+88|Alliance Ranger|deployment.alliance-ranger|null|false|false|all|Rebel|3|9|3|Small|5|4|Ranged
+89|Gamorrean Guards|deployment.gamorrean-guards|null|false|false|all|Mercenary|2|6|3|Small|5|4|Melee
+90|Gamorrean Guards|deployment.gamorrean-guards|null|true|false|all|Mercenary|2|8|4|Small|8|4|Melee
+91|Weequay Pirates|deployment.weequay-pirates|null|false|false|all|Mercenary|2|5|3|Small|4|4|Ranged
+92|Weequay Pirates|deployment.weequay-pirates|null|true|false|all|Mercenary|2|7|4|Small|6|4|Ranged
+93|Rancor|deployment.rancor|null|true|false|campagn|Mercenary|1|10|null|Massive|15|4|Melee
+94|Rancor|deployment.rancor|null|true|false|skirmish|Mercenary|1|10|null|Massive|15|4|Melee
+95|Jabba the Hutt|deployment.jabba-the-hutt|deployment.jabba-the-hutt.title|true|true|campagn|Mercenary|1|6|null|Large|10|2|Melee
+96|Jabba the Hutt|deployment.jabba-the-hutt|deployment.jabba-the-hutt.title|true|true|skirmish|Mercenary|1|6|null|Large|10|2|Melee

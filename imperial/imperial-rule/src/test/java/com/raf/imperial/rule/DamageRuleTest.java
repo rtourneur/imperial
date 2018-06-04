@@ -77,8 +77,8 @@ public class DamageRuleTest extends AbstractRuleTest {
     for (DamageValue damageValue : damages.getValues()) {
       log.info(damageValue.toString());
     }
-    assertEquals(2, damages.getMinDamage());
-    assertEquals(7, damages.getMaxDamage());
+    assertEquals(1, damages.getMinDamage());
+    assertEquals(5, damages.getMaxDamage());
   }
 
   /**
@@ -306,9 +306,11 @@ public class DamageRuleTest extends AbstractRuleTest {
       calculStat(builder, deployment, "White", damages, ranged);
       stats.add(builder.toString());
     }
+    final StringBuilder logBuilder = new StringBuilder().append('\n');
     for (String string : stats) {
-      log.info(string);
+      logBuilder.append(string).append('\n');
     }
+    log.info(logBuilder.toString());
   }
 
   /**

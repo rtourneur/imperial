@@ -64,3 +64,6 @@ ID|KEY_1|VALUE_1|KEY_2|VALUE_2|SURGE
 63|Pierce|1|null|null|null
 64|Damage|2|null|null|2
 65|Accuracy|1|Pierce|1|1
+66|Damage|-1|null|null|null
+67|Reach|null|Block|1|null
+68|Damage|3|null|null|1

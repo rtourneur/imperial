@@ -114,3 +114,37 @@ Use the Force|ability.use-the-force|ability.use-the-force.code|null|null
 Mind Trick|ability.mind-trick|ability.mind-trick.code|null|null
 Alter Mind|ability.alter-mind|ability.alter-mind.code|null|null
 Into the Force|ability.into-the-force|ability.into-the-force.code|null|null
+Agile|ability.agile|ability.agile.code|null|null
+Jets|ability.jets|ability.jets.code|null|null
+Fly-By|ability.fly-by|ability.fly-by.code|null|null
+Flamethrower|ability.flamethrower|ability.flamethrower.code|1|null
+Mounted|ability.mounted|ability.mounted.code|null|null
+Rush|ability.rush|ability.rush.code|1|null
+Get Down|ability.get-down|ability.get-down.code|null|null
+Immune|ability.immune|ability.immune.code|null|null
+Mandalorian Whip|ability.mandalorian-whip|ability.mandalorian-whip.code|1|null
+Responsive|ability.responsive|ability.responsive.code|null|null
+Rapid Fire|ability.rapid-fire|ability.rapid-fire.code|1|null
+Boltslinger|ability.boltslinger|ability.boltslinger.code|null|null
+Deflect|ability.deflect|ability.deflect.code|null|null
+Heroic|ability.heroic|ability.heroic.code|null|null
+Guerrilla|ability.guerrilla|ability.guerrilla.code|null|null
+Sniper|ability.sniper|ability.sniper.code|null|null
+Gamorrean Honor|ability.gamorrean-honor|ability.gamorrean-honor.code|null|null
+Labored Attack|ability.labored-attack|ability.labored-attack.code|null|null
+Gamorrean Honor Guard|ability.gamorrean-honor-guard|ability.gamorrean-honor-guard.code|null|null
+Professional|ability.professional|ability.professional.code|null|null
+Raider|ability.raider|ability.raider.code|null|null
+Prowl|ability.prowl|ability.prowl.code|1|null
+Throw|ability.throw|ability.throw.code|1|null
+Feed|ability.feed|ability.feed.code|null|null
+Trained|ability.trained|ability.trained.code|null|null
+Bully|ability.bully|ability.bully.code|1|null
+Execution Order|ability.execution-order|ability.execution-order.code|1|null
+Financial Incentive|ability.financial-incentive|ability.financial-incentive.code|1|null
+Plot|ability.plot|ability.plot.code|1|null
+Hutt Syndicate|ability.hutt-syndicate|ability.hutt-syndicate.code|null|null
+Incentivize|ability.incentivize|ability.incentivize.code|1|null
+Scheme|ability.scheme|ability.scheme.code|1|null
+Order Hit|ability.order-hit|ability.order-hit.code|2|null
+Nefarious Gains|ability.nefarious-gains|ability.nefarious-gains.code|null|null
