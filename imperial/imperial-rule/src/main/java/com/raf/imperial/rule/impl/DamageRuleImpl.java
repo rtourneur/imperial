@@ -315,6 +315,8 @@ public class DamageRuleImpl implements DamageRule {
       } else if (SURGE.equals(keyWord1.getName()) && value1 != null) {
         log.debug("Extra surge found {}", value1);
         extraSurge = value1.intValue();
+      } else {
+        value = createDamageValue(null, null, null, null);
       }
       final KeyWord keyWord2 = capacity.getKey2();
       if (keyWord2 != null) {

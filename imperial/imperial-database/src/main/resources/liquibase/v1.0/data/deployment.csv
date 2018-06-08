@@ -95,3 +95,22 @@ ID|NAME|NAME_CODE|TITLE_CODE|ELITE|UNIQUENESS|MODE|FACTION|COUNT|COST|REINFORCE|
 94|Rancor|deployment.rancor|null|true|false|skirmish|Mercenary|1|10|null|Massive|15|4|Melee
 95|Jabba the Hutt|deployment.jabba-the-hutt|deployment.jabba-the-hutt.title|true|true|campagn|Mercenary|1|6|null|Large|10|2|Melee
 96|Jabba the Hutt|deployment.jabba-the-hutt|deployment.jabba-the-hutt.title|true|true|skirmish|Mercenary|1|6|null|Large|10|2|Melee
+97|Alliance Ranger|deployment.alliance-ranger|null|true|false|all|Rebel|3|12|4|Small|7|4|Ranged
+98|Dewback Rider|deployment.dewback-rider|null|true|false|all|Imperial|1|5|null|Medium|9|4|Ranged
+99|Hera Syndulla|deployment.hera-syndulla|deployment.hera-syndulla.title|true|true|all|Rebel|1|4|null|Small|7|4|Ranged
+100|C1-10P|deployment.c1-10p|deployment.c1-10p.title|true|true|all|Rebel|1|3|null|Small|5|4|Melee
+101|BT-1|deployment.bt-1|deployment.bt-1.title|true|true|all|Imperial|1|6|null|Small|10|4|Ranged
+102|0-0-0|deployment.0-0-0|deployment.0-0-0.title|true|true|all|Imperial|1|4|null|Small|8|4|Melee
+103|Jawa Scavenger|deployment.jawa-scavenger|null|false|false|all|Mercenary|1|2|null|Small|3|4|Ranged
+104|Jawa Scavenger|deployment.jawa-scavenger|null|true|false|campagn|Mercenary|1|3|null|Small|5|4|Ranged
+105|Jawa Scavenger|deployment.jawa-scavenger|null|true|false|skirmish|Mercenary|1|3|null|Small|5|4|Ranged
+106|Ko-Tun Feralo|deployment.ko-tun-feralo|null|false|true|skirmish|Rebel|1|7|null|Small|9|4|Ranged
+107|Jarrod Kervin|deployment.jarrod-kervin|null|false|true|skirmish|Rebel|1|5|null|Small|7|5|Melee
+108|Drokkatta|deployment.drokkatta|null|false|true|skirmish|Rebel|1|9|null|Small|12|4|Ranged
+109|Riot Trooper|deployment.riot-trooper|null|false|false|campagn|Imperial|2|5|2|Small|5|4|Melee
+110|Riot Trooper|deployment.riot-trooper|null|false|false|skirmish|Imperial|2|5|2|Small|5|4|Melee
+111|Riot Trooper|deployment.riot-trooper|null|true|false|campagn|Imperial|2|7|3|Small|7|4|Melee
+112|Riot Trooper|deployment.riot-trooper|null|true|false|skirmish|Imperial|2|7|3|Small|7|4|Melee
+113|Sentry Droid|deployment.sentry-droid|null|false|false|all|Imperial|2|6|3|Small|5|4|Ranged
+114|Sentry Droid|deployment.sentry-droid|null|true|false|all|Imperial|2|10|5|Small|8|4|Ranged
+115|AT-DP|deployment.at-dp|null|true|false|all|Imperial|1|9|null|Massive|16|3|Ranged
