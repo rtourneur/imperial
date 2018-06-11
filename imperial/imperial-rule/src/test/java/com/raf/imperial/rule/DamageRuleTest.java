@@ -508,8 +508,8 @@ public class DamageRuleTest extends AbstractRuleTest {
     for (DamageValue damageValue : damages.getValues()) {
       log.info(damageValue.toString());
     }
-    assertEquals(3, damages.getMinDamage());
-    assertEquals(6, damages.getMaxDamage());
+    assertEquals(2, damages.getMinDamage());
+    assertEquals(5, damages.getMaxDamage());
   }
 
   /**
@@ -517,7 +517,9 @@ public class DamageRuleTest extends AbstractRuleTest {
    */
   @Test
   public final void testGetDamagesItemAll() {
-    final List<Item> items = this.itemDao.getWeapons(null);
+    final List<Item> items = new ArrayList<>();
+    items.addAll(itemDao.getWeapons(AttackTypeEnum.RANGED));
+    items.addAll(itemDao.getWeapons(AttackTypeEnum.MELEE));
     Damages damages;
     final StringBuilder builder = new StringBuilder();
     boolean ranged;
@@ -548,7 +550,9 @@ public class DamageRuleTest extends AbstractRuleTest {
    */
   @Test
   public final void testGetDamagesItemAllDefense() {
-    final List<Item> items = this.itemDao.getWeapons(null);
+    final List<Item> items = new ArrayList<>();
+    items.addAll(itemDao.getWeapons(AttackTypeEnum.RANGED));
+    items.addAll(itemDao.getWeapons(AttackTypeEnum.MELEE));
     Damages damages;
     final StringBuilder builder = new StringBuilder();
     boolean ranged;
@@ -572,9 +576,11 @@ public class DamageRuleTest extends AbstractRuleTest {
       calculStat(builder, item, "White", damages, ranged);
       stats.add(builder.toString());
     }
+    final StringBuilder logBuilder = new StringBuilder().append('\n');
     for (String string : stats) {
-      log.info(string);
+      logBuilder.append(string).append('\n');
     }
+    log.info(logBuilder.toString());
   }
 
   private List<Dice> getItemAttackDices(final Item item) {

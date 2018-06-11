@@ -6,6 +6,7 @@ import com.raf.fwk.jpa.dao.EntityIdDao;
 import com.raf.imperial.jpa.domain.card.Deployment;
 import com.raf.imperial.jpa.domain.card.Item;
 import com.raf.imperial.jpa.domain.model.Dice;
+import com.raf.imperial.jpa.enums.AttackTypeEnum;
 import com.raf.imperial.jpa.enums.ItemCategoryEnum;
 
 /**
@@ -16,7 +17,23 @@ import com.raf.imperial.jpa.enums.ItemCategoryEnum;
 public interface ItemDao extends EntityIdDao<Item> {
 
   /**
-   * Return the list of item cards for an item category.
+   * Return the list of weapon item cards.
+   * 
+   * @return the list of item cards
+   */
+  List<Item> getWeapons();
+
+  /**
+   * Return the list of weapon item cards for an attack type.
+   * 
+   * @param attackType
+   *          the attack type
+   * @return the list of item cards
+   */
+  List<Item> getWeapons(AttackTypeEnum attackType);
+
+  /**
+   * Return the list of weapon item cards for an item category.
    * 
    * @param itemCategory
    *          the item category

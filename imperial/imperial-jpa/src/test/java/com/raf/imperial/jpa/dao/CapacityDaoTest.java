@@ -77,7 +77,7 @@ public class CapacityDaoTest extends AbstractDaoTest {
     List<Capacity> result = this.capacityDao.findByExample(example);
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(11, result.size());
+    assertEquals(15, result.size());
     example.setKey1(null);
     example.setKey2(keyWord);
     result = this.capacityDao.findByExample(example);
@@ -89,7 +89,7 @@ public class CapacityDaoTest extends AbstractDaoTest {
     result = this.capacityDao.findByExample(example);
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(2, result.size());
+    assertEquals(4, result.size());
   }
 
   /**
@@ -100,7 +100,7 @@ public class CapacityDaoTest extends AbstractDaoTest {
     final List<Capacity> result = this.capacityDao.listAll();
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(63, result.size());
+    assertEquals(77, result.size());
   }
 
   /**

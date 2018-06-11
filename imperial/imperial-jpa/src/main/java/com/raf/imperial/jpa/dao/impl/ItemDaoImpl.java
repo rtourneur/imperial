@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Order;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
@@ -18,6 +19,7 @@ import com.raf.imperial.jpa.dao.DiceDao;
 import com.raf.imperial.jpa.dao.ItemDao;
 import com.raf.imperial.jpa.domain.card.Item;
 import com.raf.imperial.jpa.domain.model.Dice;
+import com.raf.imperial.jpa.enums.AttackTypeEnum;
 import com.raf.imperial.jpa.enums.ItemCategoryEnum;
 import com.raf.imperial.jpa.enums.ItemTypeEnum;
 
@@ -41,6 +43,30 @@ public final class ItemDaoImpl extends AbstractIdDao<Item> implements ItemDao {
   }
 
   /**
+   * Return the list of weapon item cards.
+   * 
+   * @return the list of item cards
+   * @see ItemDao#getWeapons()
+   */
+  @Override
+  public List<Item> getWeapons() {
+    return getWeaponsImpl(null, null);
+  }
+
+  /**
+   * Return the list of weapon item cards for an attack type.
+   * 
+   * @param attackType
+   *          the attack type
+   * @return the list of item cards
+   * @see ItemDao#getWeapons(AttackTypeEnum)
+   */
+  @Override
+  public List<Item> getWeapons(final AttackTypeEnum attackType) {
+    return getWeaponsImpl(attackType, null);
+  }
+
+  /**
    * Return the list of item cards for an item category.
    * 
    * @param itemCategory
@@ -50,18 +76,7 @@ public final class ItemDaoImpl extends AbstractIdDao<Item> implements ItemDao {
    */
   @Override
   public List<Item> getWeapons(final ItemCategoryEnum itemCategory) {
-    final CriteriaBuilder builder = getCriteriaBuilder();
-    final CriteriaQuery<Item> criteria = getQuery();
-    final Root<Item> from = getRoot(criteria);
-    final Predicate modePred = builder.equal(from.get("itemType"), ItemTypeEnum.WEAPON);
-    if (itemCategory == null) {
-      criteria.where(modePred);
-    } else {
-      final Predicate categoryPred = builder.equal(from.get("itemCategory"), itemCategory);
-      criteria.where(modePred, categoryPred);
-    }
-    final Query query = getTypedQuery(criteria);
-    return query.getResultList();
+    return getWeaponsImpl(null, itemCategory);
   }
 
   /**
@@ -146,4 +161,40 @@ public final class ItemDaoImpl extends AbstractIdDao<Item> implements ItemDao {
     return predicatesList.toArray(new Predicate[predicatesList.size()]);
   }
 
+  /**
+   * Append the criteria default order.
+   * <ul>
+   * <li>itemCategory</li>
+   * </ul>
+   * 
+   * @param orders
+   *          the orders list
+   * @param builder
+   *          the criteria builder
+   * @param root
+   *          the root type
+   * 
+   * @see AbstractIdDao#appendOrder(List, CriteriaBuilder, Root)
+   */
+  @Override
+  protected void appendOrder(final List<Order> orders, final CriteriaBuilder builder, final Root<Item> root) {
+    orders.add(builder.asc(root.get("itemCategory")));
+  }
+
+  private List<Item> getWeaponsImpl(final AttackTypeEnum attackType, final ItemCategoryEnum itemCategory) {
+    final CriteriaBuilder builder = getCriteriaBuilder();
+    final CriteriaQuery<Item> criteria = getQuery();
+    final Root<Item> from = getRoot(criteria);
+    final List<Predicate> predicates = new ArrayList<>();
+    predicates.add(builder.equal(from.get("itemType"), ItemTypeEnum.WEAPON));
+    if (attackType != null) {
+      predicates.add(builder.equal(from.get("attackType"), attackType));
+    }
+    if (itemCategory != null) {
+      predicates.add(builder.equal(from.get("itemCategory"), itemCategory));
+    }
+    criteria.where(predicates.toArray(new Predicate[predicates.size()]));
+    final Query query = getTypedQuery(criteria.orderBy(getOrder(builder, from)));
+    return query.getResultList();
+  }
 }

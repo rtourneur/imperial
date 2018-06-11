@@ -59,7 +59,7 @@ public class KeyWordDaoTest extends AbstractDaoTest {
     final List<KeyWord> result = this.keyWordDao.listAll();
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(19, result.size());
+    assertEquals(22, result.size());
   }
 
   /**

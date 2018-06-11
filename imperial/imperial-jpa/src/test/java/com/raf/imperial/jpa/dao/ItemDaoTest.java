@@ -105,13 +105,13 @@ public class ItemDaoTest extends AbstractDaoTest {
     result = this.itemDao.findByExample(example);
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(13, result.size());
+    assertEquals(17, result.size());
     example.setItemType(null);
     example.setItemCategory(ItemCategoryEnum.TIER_1);
     result = this.itemDao.findByExample(example);
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(17, result.size());
+    assertEquals(22, result.size());
   }
 
   /**
@@ -122,7 +122,7 @@ public class ItemDaoTest extends AbstractDaoTest {
     final List<Item> result = this.itemDao.listAll();
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(52, result.size());
+    assertEquals(67, result.size());
   }
 
   /**
@@ -143,10 +143,13 @@ public class ItemDaoTest extends AbstractDaoTest {
   public void testGetWeapons() {
     List<Item> result = this.itemDao.getWeapons(ItemCategoryEnum.TIER_3);
     assertNotNull(result);
-    assertEquals(6, result.size());
-    result = this.itemDao.getWeapons(null);
+    assertEquals(9, result.size());
+    result = this.itemDao.getWeapons();
     assertNotNull(result);
-    assertEquals(23, result.size());
+    assertEquals(29, result.size());
+    result = this.itemDao.getWeapons(AttackTypeEnum.MELEE);
+    assertNotNull(result);
+    assertEquals(12, result.size());
   }
 
   /**

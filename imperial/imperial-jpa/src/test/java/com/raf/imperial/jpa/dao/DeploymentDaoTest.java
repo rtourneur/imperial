@@ -98,7 +98,7 @@ public class DeploymentDaoTest extends AbstractDaoTest {
     List<Deployment> result = this.deploymentDao.findByExample(example);
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(10, result.size());
+    assertEquals(16, result.size());
     final String factionName = "Rebel";
     final Faction faction = this.factionDao.getById(factionName);
     assertNotNull(faction);
@@ -107,7 +107,7 @@ public class DeploymentDaoTest extends AbstractDaoTest {
     result = this.deploymentDao.findByExample(example);
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(32, result.size());
+    assertEquals(42, result.size());
   }
 
   /**
@@ -118,7 +118,7 @@ public class DeploymentDaoTest extends AbstractDaoTest {
     final List<Deployment> result = this.deploymentDao.listAll();
     assertNotNull(result);
     assertFalse(result.isEmpty());
-    assertEquals(76, result.size());
+    assertEquals(115, result.size());
   }
 
   /**
@@ -141,7 +141,7 @@ public class DeploymentDaoTest extends AbstractDaoTest {
     final Faction faction = this.factionDao.getById(factionName);
     final List<Deployment> result = this.deploymentDao.getCampagn(faction);
     assertNotNull(result);
-    assertEquals(17, result.size());
+    assertEquals(23, result.size());
   }
 
   /**
@@ -153,7 +153,7 @@ public class DeploymentDaoTest extends AbstractDaoTest {
     final Faction faction = this.factionDao.getById(factionName);
     final List<Deployment> result = this.deploymentDao.getSkirmish(faction);
     assertNotNull(result);
-    assertEquals(30, result.size());
+    assertEquals(39, result.size());
   }
 
   /**
