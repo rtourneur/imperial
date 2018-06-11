@@ -72,3 +72,7 @@ ID|KEY_1|VALUE_1|KEY_2|VALUE_2|SURGE
 71|Damage|1|Evade|1|null
 72|Damage Token|1|null|null|1
 73|Weaken|null|null|null|null
+74|Health|2|null|null|null
+75|Health|3|null|null|null
+76|Health|-2|Endurance|1|null
+77|Health|1|null|null|null

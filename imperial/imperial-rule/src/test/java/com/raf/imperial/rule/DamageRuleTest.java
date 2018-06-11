@@ -524,12 +524,14 @@ public class DamageRuleTest extends AbstractRuleTest {
     final List<String> stats = new ArrayList<>();
     for (Item item : items) {
       ranged = AttackTypeEnum.RANGED.equals(item.getAttackType());
-      damages = this.damageRule.getDamages(item);
+      final List<Capacity> capacities = item.getCapacities();
+      final List<Dice> dices = getItemAttackDices(item);
+      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
       calculStat(builder, item, null, damages, ranged);
       stats.add(builder.toString());
       if (ranged) {
         for (int i = 1; i <= 10; i++) {
-          damages = this.damageRule.getDamages(item, i);
+          damages = this.damageRule.getDamages(dices, capacities, ranged, i);
           assertNotNull(damages);
           calculStat(builder, item, null, damages, ranged);
           stats.add(builder.toString());
@@ -553,16 +555,18 @@ public class DamageRuleTest extends AbstractRuleTest {
     final List<String> stats = new ArrayList<>();
     for (Item item : items) {
       ranged = AttackTypeEnum.RANGED.equals(item.getAttackType());
-      damages = this.damageRule.getDamages(item);
+      final List<Capacity> capacities = item.getCapacities();
+      List<Dice> dices;
+      dices = getItemAttackDices(item);
+      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
       calculStat(builder, item, null, damages, ranged);
       stats.add(builder.toString());
-      List<Dice> dices = item.getAttacks();
+      dices = getItemAttackDices(item);
       dices.add(this.diceDao.getById("Black"));
-      final List<Capacity> capacities = item.getCapacities();
       damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
       calculStat(builder, item, "Black", damages, ranged);
       stats.add(builder.toString());
-      dices = item.getAttacks();
+      dices = getItemAttackDices(item);
       dices.add(this.diceDao.getById("White"));
       damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
       calculStat(builder, item, "White", damages, ranged);
@@ -571,6 +575,16 @@ public class DamageRuleTest extends AbstractRuleTest {
     for (String string : stats) {
       log.info(string);
     }
+  }
+
+  private List<Dice> getItemAttackDices(final Item item) {
+    final List<Dice> dices = item.getAttacks();
+    if (dices.isEmpty()) {
+      dices.add(this.diceDao.getById("Blue"));
+      dices.add(this.diceDao.getById("Green"));
+      dices.add(this.diceDao.getById("Yellow"));
+    }
+    return dices;
   }
 
   private void calculStat(final StringBuilder builder, final Deployment deployment, final String option,

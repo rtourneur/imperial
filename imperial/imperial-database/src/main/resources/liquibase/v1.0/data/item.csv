@@ -51,3 +51,18 @@ ID|NAME|NAME_CODE|DESCRIPTION_CODE|RULE_CODE|EXPANSION|ITEM_CATEGORY|ITEM_TYPE|A
 50|Concussion Grenades|item.concussion-grenades|item.concussion-grenades.desc|item.concussion-grenades.rule|Return to Hoth|tier3|Accessory|None|null|400
 51|Valken-38 Carabine|item.valken-38-carabine|item.valken-38-carabine.desc|item.valken-38-carabine.rule|Return to Hoth|tier3|Weapon|Ranged|1|1250
 52|Vibrogenerator|item.vibrogenerator|item.vibrogenerator.desc|item.vibrogenerator.rule|Return to Hoth|tier3|Modification|Melee|null|350
+53|Shadowsilk Cloak|item.shadowsilk-cloak|item.shadowsilk-cloak.desc|item.shadowsilk-cloak.rule|The Bespin Gambit|tier1|Armor|None|null|350
+54|Vibrosword|item.vibrosword|item.vibrosword.desc|item.vibrosword.rule|The Bespin Gambit|tier1|Weapon|Melee|2|350
+55|R5 Astromech|item.r5-astromech|item.r5-astromech.desc|item.r5-astromech.rule|The Bespin Gambit|tier2|Accessory|None|null|250
+56|Weighted Head|item.weighted-head|item.weighted-head.desc|item.weighted-head.rule|The Bespin Gambit|tier2|Modification|Melee|null|400
+57|Disruptor Pistol|item.disruptor-pistol|item.disruptor-pistol.desc|item.disruptor-pistol.rule|The Bespin Gambit|tier3|Weapon|Ranged|1|700
+58|Sniper Scope|item.sniper-scope|item.sniper-scope.desc|item.sniper-scope.rule|The Bespin Gambit|tier3|Modification|Ranged|null|250
+59|Bacta Pump|item.bacta-pump|item.bacta-pump.desc|item.bacta-pump.rule|Jabba's Realm|tier1|Accessory|None|null|300
+60|Emergency Injector|item.emergency-injector|item.emergency-injector.desc|item.emergency-injector.rule|Jabba's Realm|tier1|Accessory|None|null|150
+61|Hand Cannon|item.hand-cannon|item.hand-cannon.desc|item.hand-cannon.rule|Jabba's Realm|tier1|Weapon|Ranged|1|400
+62|Bolt Upgrade|item.bolt-upgrade|item.bolt-upgrade.desc|item.bolt-upgrade.rule|Jabba's Realm|tier2|Modification|Ranged|null|250
+63|Double Vibrosword|item.double-vibrosword|item.double-vibrosword.desc|item.double-vibrosword.rule|Jabba's Realm|tier2|Weapon|Melee|1|650
+64|Energized Hilt|item.energized-hilt|item.energized-hilt.desc|item.energized-hilt.rule|Jabba's Realm|tier2|Modification|Melee|null|250
+65|Admiral's Uniform|item.admirals-uniform|item.admirals-uniform.desc|item.admirals-uniform.rule|Jabba's Realm|tier3|Armor|None|null|350
+66|Modified Energy Cannon|item.modified-energy-cannon|item.modified-energy-cannon.desc|item.modified-energy-cannon.rule|Jabba's Realm|tier3|Weapon|Ranged|2|1000
+67|Ryyk Blades|item.ryyk-blades|item.ryyk-blades.desc|item.ryyk-blades.rule|Jabba's Realm|tier3|Weapon|Melee|1|950
