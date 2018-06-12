@@ -163,9 +163,11 @@ public class DamageRuleTest extends AbstractRuleTest {
       calculStat(builder, deployment, "White", damages, ranged);
       stats.add(builder.toString());
     }
+    final StringBuilder logBuilder = new StringBuilder().append('\n');
     for (String string : stats) {
-      log.info(string);
+      logBuilder.append(string).append('\n');
     }
+    log.info(logBuilder.toString());
   }
 
   /**
