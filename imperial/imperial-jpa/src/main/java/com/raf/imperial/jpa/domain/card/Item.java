@@ -21,6 +21,7 @@ import javax.persistence.UniqueConstraint;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import com.raf.imperial.jpa.Constant;
 import com.raf.imperial.jpa.domain.model.Capacity;
 import com.raf.imperial.jpa.domain.model.Dice;
 import com.raf.imperial.jpa.domain.model.Expansion;
@@ -36,7 +37,7 @@ import lombok.Setter;
  * @author RAF
  */
 @Entity
-@Table(name = "ITEM", schema = "IMPERIAL")
+@Table(name = "ITEM", schema = Constant.SCHEMA)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -56,7 +57,7 @@ public class Item extends AbstractItem implements CardEntity {
 
   /** The traits. */
   @ManyToMany
-  @JoinTable(name = "ITEM_TRAIT", schema = "IMPERIAL", joinColumns = {
+  @JoinTable(name = "ITEM_TRAIT", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "ITEM_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_ITEM_TRAIT_ITEM")) }, inverseJoinColumns = {
           @JoinColumn(name = "TRAIT_NAME", referencedColumnName = "NAME", foreignKey = @ForeignKey(name = "FK_ITEM_TRAIT_TRAIT")) })
   private List<Trait> traits;
@@ -67,7 +68,7 @@ public class Item extends AbstractItem implements CardEntity {
 
   /** The embedded capacities. */
   @ElementCollection
-  @CollectionTable(name = "ITEM_CAPACITY", schema = "IMPERIAL", joinColumns = {
+  @CollectionTable(name = "ITEM_CAPACITY", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "ITEM_ID", referencedColumnName = "ID") }, uniqueConstraints = {
           @UniqueConstraint(name = "IDX_ITEM_CAPACITY", columnNames = { "ITEM_ID",
               "RANK" }) }, foreignKey = @ForeignKey(name = "FK_ITEM_CAPACITY_ITEM"))
@@ -80,7 +81,7 @@ public class Item extends AbstractItem implements CardEntity {
 
   /** The embedded attack pool dices. */
   @ElementCollection
-  @CollectionTable(name = "ITEM_ATTACK", schema = "IMPERIAL", joinColumns = {
+  @CollectionTable(name = "ITEM_ATTACK", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "ITEM_ID", referencedColumnName = "ID") }, uniqueConstraints = {
           @UniqueConstraint(name = "IDX_ITEM_ATTACK", columnNames = { "ITEM_ID",
               "RANK" }) }, foreignKey = @ForeignKey(name = "FK_ITEM_ATTACK_ITEM"))

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.raf.fwk.jpa.domain.AbstractNamedEntity;
+import com.raf.imperial.jpa.Constant;
 
 import lombok.NoArgsConstructor;
 
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
  * @author RAF
  */
 @Entity
-@Table(name = "DICE_TYPE", schema = "IMPERIAL")
+@Table(name = "DICE_TYPE", schema = Constant.SCHEMA)
 @NoArgsConstructor
 public class DiceType extends AbstractNamedEntity {
 

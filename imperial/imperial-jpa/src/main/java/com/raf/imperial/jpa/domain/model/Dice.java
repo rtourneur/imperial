@@ -17,6 +17,7 @@ import javax.persistence.UniqueConstraint;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.raf.fwk.jpa.domain.AbstractNamedEntity;
+import com.raf.imperial.jpa.Constant;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,7 +29,7 @@ import lombok.Setter;
  * @author RAF
  */
 @Entity
-@Table(name = "DICE", schema = "IMPERIAL")
+@Table(name = "DICE", schema = Constant.SCHEMA)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -43,7 +44,7 @@ public class Dice extends AbstractNamedEntity {
 
   /** The dice sides. */
   @ElementCollection(fetch = FetchType.EAGER)
-  @CollectionTable(name = "DICE_SIDE", schema = "IMPERIAL", joinColumns = {
+  @CollectionTable(name = "DICE_SIDE", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "DICE", referencedColumnName = "NAME") }, uniqueConstraints = {
           @UniqueConstraint(name = "IDX_DICE_SIDE", columnNames = { "DICE",
               "SIDE" }) }, foreignKey = @ForeignKey(name = "FK_DICE_SIDE_DICE"))

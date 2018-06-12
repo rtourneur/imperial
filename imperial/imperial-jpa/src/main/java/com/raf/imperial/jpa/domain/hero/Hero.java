@@ -26,6 +26,7 @@ import javax.persistence.UniqueConstraint;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.raf.fwk.jpa.domain.AbstractNamedEntity;
+import com.raf.imperial.jpa.Constant;
 import com.raf.imperial.jpa.domain.model.Dice;
 import com.raf.imperial.jpa.domain.model.Expansion;
 import com.raf.imperial.jpa.enums.AttributEnum;
@@ -40,7 +41,7 @@ import lombok.Setter;
  * @author RAF
  */
 @Entity
-@Table(name = "HERO", schema = "IMPERIAL")
+@Table(name = "HERO", schema = Constant.SCHEMA)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -92,7 +93,7 @@ public class Hero extends AbstractNamedEntity {
 
   /** The capacities. */
   @ElementCollection
-  @CollectionTable(name = "HERO_ATTRIBUT", schema = "IMPERIAL", joinColumns = {
+  @CollectionTable(name = "HERO_ATTRIBUT", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "HERO_NAME", referencedColumnName = "NAME") }, uniqueConstraints = {
           @UniqueConstraint(name = "IDX_HERO_HERO_ATTRIBUT", columnNames = { "HERO_NAME", "RANK", "ATTRIBUT",
               "WOUNDED" }) }, foreignKey = @ForeignKey(name = "FK_HERO_ATTRIBUT_HERO"))

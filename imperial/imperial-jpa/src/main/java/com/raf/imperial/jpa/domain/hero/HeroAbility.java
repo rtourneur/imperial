@@ -8,6 +8,7 @@ import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import com.raf.imperial.jpa.Constant;
 import com.raf.imperial.jpa.domain.model.AbstractAbility;
 
 import lombok.Getter;
@@ -20,7 +21,7 @@ import lombok.Setter;
  * @author RAF
  */
 @Entity
-@Table(name = "HERO_ABILITY", schema = "IMPERIAL")
+@Table(name = "HERO_ABILITY", schema = Constant.SCHEMA)
 @Getter
 @Setter
 @NoArgsConstructor

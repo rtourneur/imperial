@@ -23,6 +23,7 @@ import javax.persistence.UniqueConstraint;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.raf.fwk.jpa.domain.AbstractIdEntity;
+import com.raf.imperial.jpa.Constant;
 import com.raf.imperial.jpa.domain.model.Ability;
 import com.raf.imperial.jpa.domain.model.Capacity;
 import com.raf.imperial.jpa.domain.model.Dice;
@@ -45,7 +46,7 @@ import lombok.Setter;
  * @author RAF
  */
 @Entity
-@Table(name = "DEPLOYMENT", schema = "IMPERIAL")
+@Table(name = "DEPLOYMENT", schema = Constant.SCHEMA)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -102,7 +103,7 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
 
   /** The traits. */
   @ManyToMany
-  @JoinTable(name = "DEPLOYMENT_TRAIT", schema = "IMPERIAL", joinColumns = {
+  @JoinTable(name = "DEPLOYMENT_TRAIT", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_TRAIT_DEPLOYMENT")) }, inverseJoinColumns = {
           @JoinColumn(name = "TRAIT_NAME", referencedColumnName = "NAME", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_TRAIT_TRAIT")) })
   private List<Trait> traits;
@@ -114,7 +115,7 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
 
   /** The embedded capacities. */
   @ElementCollection
-  @CollectionTable(name = "DEPLOYMENT_CAPACITY", schema = "IMPERIAL", joinColumns = {
+  @CollectionTable(name = "DEPLOYMENT_CAPACITY", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID") }, uniqueConstraints = {
           @UniqueConstraint(name = "IDX_DEPLOYMENT_CAPACITY", columnNames = { "DEPLOYMENT_ID",
               "RANK" }) }, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_CAPACITY_DEPLOYMENT"))
@@ -127,7 +128,7 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
 
   /** The abilities. */
   @ManyToMany
-  @JoinTable(name = "DEPLOYMENT_ABILITY", schema = "IMPERIAL", joinColumns = {
+  @JoinTable(name = "DEPLOYMENT_ABILITY", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_ABILITY_DEPLOYMENT")) }, inverseJoinColumns = {
           @JoinColumn(name = "ABILITY_NAME", referencedColumnName = "NAME", foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_ABILITY_ABILITY")) })
   private List<Ability> abilities;
@@ -142,7 +143,7 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
 
   /** The embedded defense pool dices. */
   @ElementCollection
-  @CollectionTable(name = "DEPLOYMENT_DEFENSE", schema = "IMPERIAL", joinColumns = {
+  @CollectionTable(name = "DEPLOYMENT_DEFENSE", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID") }, uniqueConstraints = {
           @UniqueConstraint(name = "IDX_DEPLOYMENT_DEFENSE", columnNames = { "DEPLOYMENT_ID",
               "RANK" }) }, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_DEFENSE_DEPLOYMENT"))
@@ -159,7 +160,7 @@ public class Deployment extends AbstractIdEntity implements CardEntity {
 
   /** The embedded attack pool dices. */
   @ElementCollection
-  @CollectionTable(name = "DEPLOYMENT_ATTACK", schema = "IMPERIAL", joinColumns = {
+  @CollectionTable(name = "DEPLOYMENT_ATTACK", schema = Constant.SCHEMA, joinColumns = {
       @JoinColumn(name = "DEPLOYMENT_ID", referencedColumnName = "ID") }, uniqueConstraints = {
           @UniqueConstraint(name = "IDX_DEPLOYMENT_ATTACK", columnNames = { "DEPLOYMENT_ID",
               "RANK" }) }, foreignKey = @ForeignKey(name = "FK_DEPLOYMENT_ATTACK_DEPLOYMENT"))

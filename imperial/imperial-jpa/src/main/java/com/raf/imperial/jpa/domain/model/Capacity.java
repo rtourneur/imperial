@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.raf.fwk.jpa.domain.AbstractIdEntity;
+import com.raf.imperial.jpa.Constant;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ import lombok.Setter;
  * @author RAF
  */
 @Entity
-@Table(name = "CAPACITY", schema = "IMPERIAL")
+@Table(name = "CAPACITY", schema = Constant.SCHEMA)
 @Getter
 @Setter
 @NoArgsConstructor
