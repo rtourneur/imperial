@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -61,7 +61,7 @@ public final class DeploymentDaoImpl extends AbstractIdDao<Deployment> implement
       final Predicate factionPred = builder.equal(from.get("faction"), faction);
       criteria.where(modePred, factionPred);
     }
-    final Query query = getTypedQuery(criteria);
+    final TypedQuery<Deployment> query = getTypedQuery(criteria);
     return query.getResultList();
   }
 
@@ -82,7 +82,7 @@ public final class DeploymentDaoImpl extends AbstractIdDao<Deployment> implement
         builder.equal(from.get("mode"), ModeEnum.SKIRMISH));
     final Predicate factionPred = builder.equal(from.get("faction"), faction);
     criteria.where(modePred, factionPred);
-    final Query query = getTypedQuery(criteria);
+    final TypedQuery<Deployment> query = getTypedQuery(criteria);
     return query.getResultList();
   }
 

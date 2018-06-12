@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Order;
@@ -194,7 +194,7 @@ public final class ItemDaoImpl extends AbstractIdDao<Item> implements ItemDao {
       predicates.add(builder.equal(from.get("itemCategory"), itemCategory));
     }
     criteria.where(predicates.toArray(new Predicate[predicates.size()]));
-    final Query query = getTypedQuery(criteria.orderBy(getOrder(builder, from)));
+    final TypedQuery<Item> query = getTypedQuery(criteria.orderBy(getOrder(builder, from)));
     return query.getResultList();
   }
 }
