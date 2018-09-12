@@ -14,11 +14,11 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum AttributEnum {
-  /** Melee. */
+  /** Strength. */
   STRENGTH("Strength"),
-  /** Ranged. */
+  /** Insight. */
   INSIGHT("Insight"),
-  /** None. */
+  /** Tech. */
   TECH("Tech");
 
   /**

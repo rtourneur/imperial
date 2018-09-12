@@ -53,11 +53,39 @@ public interface DamageRule {
    *          the deployment card
    * @param focus
    *          the focus indicator
+   * @param defense
+   *          the defense dice
+   * @return the damages
+   */
+  Damages getDamages(Deployment deployment, boolean focus, String defense);
+
+  /**
+   * Calcul and returns the damages for a deployment card.
+   * 
+   * @param deployment
+   *          the deployment card
+   * @param focus
+   *          the focus indicator
    * @param accuracy
    *          the minimum accuracy
    * @return the damages
    */
   Damages getDamages(Deployment deployment, boolean focus, int accuracy);
+
+  /**
+   * Calcul and returns the damages for a deployment card.
+   * 
+   * @param deployment
+   *          the deployment card
+   * @param focus
+   *          the focus indicator
+   * @param accuracy
+   *          the minimum accuracy
+   * @param defense
+   *          the defense dice
+   * @return the damages
+   */
+  Damages getDamages(Deployment deployment, boolean focus, int accuracy, String defense);
 
   /**
    * Calcul and returns the damages for a item card.

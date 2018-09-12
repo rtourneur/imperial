@@ -39,7 +39,9 @@ public interface DeploymentDao extends EntityIdDao<Deployment> {
    *          the deployment card
    * @param focus
    *          the focus indicator
+   * @param defense
+   *          the defense dice
    * @return the list of dices
    */
-  List<Dice> getAttack(Deployment deployment, boolean focus);
+  List<Dice> getAttack(Deployment deployment, boolean focus, String defense);
 }

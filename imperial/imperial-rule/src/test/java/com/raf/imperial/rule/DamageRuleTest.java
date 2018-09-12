@@ -38,6 +38,12 @@ public class DamageRuleTest extends AbstractRuleTest {
   /** The tab character. */
   private static final char TAB = '\t';
 
+  /** The black defense dice name. */
+  private static final String BLACK_DEFENSE = "Black";
+
+  /** The black defense dice name. */
+  private static final String WHITE_DEFENSE = "White";
+
   /** The damage rule. */
   @Resource
   private DamageRule damageRule;
@@ -252,18 +258,20 @@ public class DamageRuleTest extends AbstractRuleTest {
       damages = this.damageRule.getDamages(deployment);
       calculStat(builder, deployment, null, damages, ranged);
       stats.add(builder.toString());
-      List<Dice> dices = deployment.getAttacks();
-      replaceUndefinedDices(dices, deployment.getAbilities());
-      dices.add(this.diceDao.getById("Black"));
-      final List<Capacity> capacities = deployment.getCapacities();
-      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
-      calculStat(builder, deployment, "Black", damages, ranged);
+      damages = this.damageRule.getDamages(deployment, true);
+      calculStat(builder, deployment, null, damages, ranged);
       stats.add(builder.toString());
-      dices = deployment.getAttacks();
-      replaceUndefinedDices(dices, deployment.getAbilities());
-      dices.add(this.diceDao.getById("White"));
-      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
-      calculStat(builder, deployment, "White", damages, ranged);
+      damages = this.damageRule.getDamages(deployment, false, BLACK_DEFENSE);
+      calculStat(builder, deployment, BLACK_DEFENSE, damages, ranged);
+      stats.add(builder.toString());
+      damages = this.damageRule.getDamages(deployment, true, BLACK_DEFENSE);
+      calculStat(builder, deployment, BLACK_DEFENSE, damages, ranged);
+      stats.add(builder.toString());
+      damages = this.damageRule.getDamages(deployment, false, WHITE_DEFENSE);
+      calculStat(builder, deployment, WHITE_DEFENSE, damages, ranged);
+      stats.add(builder.toString());
+      damages = this.damageRule.getDamages(deployment, true, WHITE_DEFENSE);
+      calculStat(builder, deployment, WHITE_DEFENSE, damages, ranged);
       stats.add(builder.toString());
     }
     final Faction imperial = this.factionDao.getById("Imperial");
@@ -273,18 +281,20 @@ public class DamageRuleTest extends AbstractRuleTest {
       damages = this.damageRule.getDamages(deployment);
       calculStat(builder, deployment, null, damages, ranged);
       stats.add(builder.toString());
-      List<Dice> dices = deployment.getAttacks();
-      replaceUndefinedDices(dices, deployment.getAbilities());
-      dices.add(this.diceDao.getById("Black"));
-      final List<Capacity> capacities = deployment.getCapacities();
-      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
-      calculStat(builder, deployment, "Black", damages, ranged);
+      damages = this.damageRule.getDamages(deployment, true);
+      calculStat(builder, deployment, null, damages, ranged);
       stats.add(builder.toString());
-      dices = deployment.getAttacks();
-      replaceUndefinedDices(dices, deployment.getAbilities());
-      dices.add(this.diceDao.getById("White"));
-      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
-      calculStat(builder, deployment, "White", damages, ranged);
+      damages = this.damageRule.getDamages(deployment, false, BLACK_DEFENSE);
+      calculStat(builder, deployment, BLACK_DEFENSE, damages, ranged);
+      stats.add(builder.toString());
+      damages = this.damageRule.getDamages(deployment, true, BLACK_DEFENSE);
+      calculStat(builder, deployment, BLACK_DEFENSE, damages, ranged);
+      stats.add(builder.toString());
+      damages = this.damageRule.getDamages(deployment, false, WHITE_DEFENSE);
+      calculStat(builder, deployment, WHITE_DEFENSE, damages, ranged);
+      stats.add(builder.toString());
+      damages = this.damageRule.getDamages(deployment, true, WHITE_DEFENSE);
+      calculStat(builder, deployment, WHITE_DEFENSE, damages, ranged);
       stats.add(builder.toString());
     }
     final Faction mercenary = this.factionDao.getById("Mercenary");
@@ -294,18 +304,20 @@ public class DamageRuleTest extends AbstractRuleTest {
       damages = this.damageRule.getDamages(deployment);
       calculStat(builder, deployment, null, damages, ranged);
       stats.add(builder.toString());
-      List<Dice> dices = deployment.getAttacks();
-      replaceUndefinedDices(dices, deployment.getAbilities());
-      dices.add(this.diceDao.getById("Black"));
-      final List<Capacity> capacities = deployment.getCapacities();
-      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
-      calculStat(builder, deployment, "Black", damages, ranged);
+      damages = this.damageRule.getDamages(deployment, true);
+      calculStat(builder, deployment, null, damages, ranged);
       stats.add(builder.toString());
-      dices = deployment.getAttacks();
-      replaceUndefinedDices(dices, deployment.getAbilities());
-      dices.add(this.diceDao.getById("White"));
-      damages = this.damageRule.getDamages(dices, capacities, ranged, 0);
-      calculStat(builder, deployment, "White", damages, ranged);
+      damages = this.damageRule.getDamages(deployment, false, BLACK_DEFENSE);
+      calculStat(builder, deployment, BLACK_DEFENSE, damages, ranged);
+      stats.add(builder.toString());
+      damages = this.damageRule.getDamages(deployment, true, BLACK_DEFENSE);
+      calculStat(builder, deployment, BLACK_DEFENSE, damages, ranged);
+      stats.add(builder.toString());
+      damages = this.damageRule.getDamages(deployment, false, WHITE_DEFENSE);
+      calculStat(builder, deployment, WHITE_DEFENSE, damages, ranged);
+      stats.add(builder.toString());
+      damages = this.damageRule.getDamages(deployment, true, WHITE_DEFENSE);
+      calculStat(builder, deployment, WHITE_DEFENSE, damages, ranged);
       stats.add(builder.toString());
     }
     final StringBuilder logBuilder = new StringBuilder().append('\n');

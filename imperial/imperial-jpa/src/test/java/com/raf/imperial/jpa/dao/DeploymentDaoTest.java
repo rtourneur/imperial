@@ -194,7 +194,7 @@ public class DeploymentDaoTest extends AbstractDaoTest {
     final Integer ident = Integer.valueOf(9);
     final Deployment deployment = this.deploymentDao.getById(ident);
     assertNotNull(deployment);
-    final List<Dice> dices = this.deploymentDao.getAttack(deployment, true);
+    final List<Dice> dices = this.deploymentDao.getAttack(deployment, true, null);
     assertNotNull(dices);
     assertEquals(4, dices.size());
     assertEquals("Blue", dices.get(0).getIdentifier());

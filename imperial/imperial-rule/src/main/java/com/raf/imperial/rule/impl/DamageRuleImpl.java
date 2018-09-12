@@ -79,7 +79,7 @@ public class DamageRuleImpl implements DamageRule {
   @Transactional
   @Loggable
   public Damages getDamages(final Deployment deployment) {
-    return getDamages(deployment, false, 0);
+    return getDamages(deployment, false, 0, null);
   }
 
   /**
@@ -96,7 +96,7 @@ public class DamageRuleImpl implements DamageRule {
   @Transactional
   @Loggable
   public Damages getDamages(final Deployment deployment, final int accuracy) {
-    return getDamages(deployment, false, accuracy);
+    return getDamages(deployment, false, accuracy, null);
   }
 
   /**
@@ -113,7 +113,26 @@ public class DamageRuleImpl implements DamageRule {
   @Transactional
   @Loggable
   public Damages getDamages(final Deployment deployment, final boolean focus) {
-    return getDamages(deployment, focus, 0);
+    return getDamages(deployment, focus, 0, null);
+  }
+
+  /**
+   * Calcul and returns the damages for a deployment card.
+   * 
+   * @param deployment
+   *          the deployment card
+   * @param focus
+   *          the focus indicator
+   * @param defense
+   *          the defense dice
+   * @return the damages
+   * @see DamageRule#getDamages(Deployment, boolean, String)
+   */
+  @Override
+  @Transactional
+  @Loggable
+  public Damages getDamages(final Deployment deployment, final boolean focus, final String defense) {
+    return getDamages(deployment, focus, 0, defense);
   }
 
   /**
@@ -132,6 +151,28 @@ public class DamageRuleImpl implements DamageRule {
   @Transactional
   @Loggable
   public Damages getDamages(final Deployment deployment, final boolean focus, final int accuracy) {
+    return getDamages(deployment, focus, accuracy, null);
+  }
+
+  /**
+   * Calcul and returns the damages for a deployment card.
+   * 
+   * @param deployment
+   *          the deployment card
+   * @param focus
+   *          the focus indicator
+   * @param accuracy
+   *          the minimum accuracy
+   * @param defense
+   *          the defense dice
+   * @return the damages
+   * @see DamageRule#getDamages(Deployment, boolean, int, String)
+   */
+  @Override
+  @Transactional
+  @Loggable
+  public Damages getDamages(final Deployment deployment, final boolean focus, final int accuracy,
+      final String defense) {
     log.info("Calculing damages for deployment {}", deployment);
     final Damages damages;
     final AttackTypeEnum attackType = deployment.getAttackType();
@@ -140,7 +181,7 @@ public class DamageRuleImpl implements DamageRule {
       damages.setValues(new ArrayList<>());
     } else {
       final boolean ranged = AttackTypeEnum.RANGED.equals(attackType);
-      final List<Dice> dices = this.deploymentDao.getAttack(deployment, focus);
+      final List<Dice> dices = this.deploymentDao.getAttack(deployment, focus, defense);
       replaceUndefinedDices(dices, deployment.getAbilities(), focus);
       final List<Capacity> capacities = deployment.getCapacities();
       damages = getDamages(dices, capacities, ranged, accuracy);

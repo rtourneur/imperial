@@ -36,7 +36,7 @@ public class Expansion extends AbstractNamedEntity {
   @Column(name = "TYPE", nullable = false, length = 30)
   private ExpansionEnum type;
 
-  /***
+  /**
    * Append the properties for the to string builder.
    * 
    * @param builder

@@ -93,17 +93,20 @@ public final class DeploymentDaoImpl extends AbstractIdDao<Deployment> implement
    *          the deployment card
    * @param focus
    *          the focus indicator
+   * @param defense
+   *          the defense dice
    * @return the list of dices
    * @see DeploymentDao#getAttack(Deployment, boolean)
    */
   @Override
-  public List<Dice> getAttack(final Deployment deployment, final boolean focus) {
+  public List<Dice> getAttack(final Deployment deployment, final boolean focus, final String defense) {
     final List<Dice> deploymentDices = deployment.getAttacks();
-    final int size;
+    int size = deploymentDices.size();
     if (focus) {
-      size = deploymentDices.size() + 1;
-    } else {
-      size = deploymentDices.size();
+      size++;
+    }
+    if (defense != null) {
+      size++;
     }
     final List<Dice> dices = new ArrayList<>(size);
     for (final Dice dice : deploymentDices) {
@@ -111,6 +114,9 @@ public final class DeploymentDaoImpl extends AbstractIdDao<Deployment> implement
     }
     if (focus) {
       dices.add(this.diceDao.getById("Green"));
+    }
+    if (defense != null) {
+      dices.add(this.diceDao.getById(defense));
     }
     return dices;
   }
